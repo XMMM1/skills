@@ -1,0 +1,335 @@
+# XMMM1/skills — a vendored, auto-synced, dual-surface agent skills bundle
+
+## Context
+
+Skills live in many repos with incompatible install procedures. The goal: one repo, one command
+(`npx skills add XMMM1/skills`), bundling skills from multiple upstreams, that **pulls upstream updates
+automatically** so nothing gets checked by hand.
+
+The current machine already demonstrates the failure this prevents:
+
+- `~/.agents/.skill-lock.json` tracks **41 skills** — 40 from `mattpocock/skills`, 1 from `vercel-labs/skills`. None authored locally.
+- `~/.claude/skills/` holds **22 symlinks** (plugin-backed, current) and **19 frozen real directories** from a Jun 27 install that never updated.
+- Ten of those shouldn't load at all: **4 deprecated upstream**, **2 are Matt's personal skills** (`obsidian-vault` reads *his* vault), and **4 were deleted upstream** (`review`, `to-issues`, `to-prd`, `decision-mapping`).
+- `review` has a **byte-identical `description`** to `code-review` — the pre-rename copy. Both fire today, competing for the same trigger.
+
+Half the set rotted silently. The repo's job is to make that impossible: explicit provenance, an explicit
+selection rule, a nightly job that surfaces drift as a PR, and CI that enforces the rules rather than
+documenting them. The repo is **agent-edited by default** — a convention an agent can't see doesn't exist.
+
+## Decisions (locked during grilling)
+
+| # | Decision | Consequence |
+|---|---|---|
+| 1 | **Never hand-edit vendored skills** — upstream always wins | Sync is fetch + overwrite. No merge machinery. Variants get a new name under `skills/matej/`. |
+| 2 | **Vendor** (copy files in) | Forced: `npx skills add` has **no transitive dependency mechanism**. |
+| 3 | **Ship both** sides of every collision, **router adjudicates** | Viable only because the hook injects the router every session (#13). |
+| 4 | **GitHub Actions cron → auto-PR**. No Docker. | Docker needs an always-on host and adds nothing over a pinned runner. |
+| 5 | **Matt: all but `deprecated/` + `personal/`** (35) | Drops the abandoned and the not-about-you. |
+| 6 | **Layout keyed by source**, 2 levels | `skills/<source>/<name>/SKILL.md`. Immune to upstream re-categorisation. |
+| 7 | **Clean slate migration** | Safe: all 19 frozen dirs match install mtime `2026-06-27 11:30:16` to the second. Zero local edits. |
+| 8 | **Deprecated upstream → keep, follow the move, flag loudly** | The PR is the notification; merging is the decision. |
+| 9 | **Public repo** `XMMM1/skills` | Zero-auth install, free unlimited CI, MIT-clean with `NOTICE`. |
+| 10 | **Exact name clash → you adjudicate** | `--add-upstream` fails hard. Nightly quarantines the one clash, ships the rest. |
+| 11 | **Boundary enforced in CI**, not documented | `verify.yml` hash-checks every vendored file per PR. |
+| 12 | **Approved plans in `plans/`**, committed before implementation | Reasoning version-controlled next to what it produced. |
+| 13 | **Two install surfaces**: `skills/` + Claude Code plugin with hooks | The `SessionStart` hook injects the router. This is what makes #3 work. |
+| 14 | **obra: 13 of 14** — all but `using-superpowers` | Your router replaces it; two session-openers would fight. |
+
+## Hard constraints discovered
+
+- **Discovery stops at depth 2** under `skills/` (CLI README: `skills/<name>/` and `skills/<category>/<name>/`). `skills/<source>/<category>/<name>/` would be **invisible**. Hence source-keyed and flat.
+- **The lock is keyed by skill name**, not source. Two sources exporting the same frontmatter `name` collide at install time — and pass every in-repo check, because the paths differ. Hence the CI uniqueness assert.
+- **`vercel-labs/skills` has no license** (all rights reserved). `find-skills` **cannot be vendored** — separate install, outside the bundle.
+- `mattpocock/skills` and `obra/superpowers` are **MIT** — vendoring is clean with attribution.
+- **`npx skills add` installs skills, never hooks.** Hooks require a plugin surface. This is why superpowers' enforcement layer arrives inert when vendored, and why #13 exists.
+- **obra's skills carry 29 `superpowers:`-namespaced cross-references across 7 files.** That namespace doesn't exist outside his plugin. Sync must rewrite them.
+- `gh` is **not installed**; create the repo via web UI or install `gh`.
+- `/Users/matejmurn/workspace/matej/agenticSkills` is empty and **not a git repo**.
+
+## Upstream analysis — the basis for the router
+
+Read both sets in full. They are not redundant; they are **opposite philosophies**, and the router only
+works because we know which wins where.
+
+**obra = compliance engineering.** Every skill: an `## The Iron Law` block, *"Violating the letter of the
+rules is violating the spirit,"* phase gates, anti-rationalization tables. Treats the agent as an
+adversary that will weasel.
+
+**Matt = reference material.** Terse, dense, progressive disclosure (`tdd/` ships `tests.md` + `mocking.md`),
+integrated vocabulary (seams, deep modules, `CONTEXT.md`, ADRs). Assumes a competent agent.
+
+**Where obra wins**
+- `verification-before-completion` — no Matt equivalent, and the best skill in either repo: *"If you haven't run the verification command in this message, you cannot claim it passes."* Targets the most common agent failure.
+- Orchestration — `subagent-driven-development` (417 lines), `dispatching-parallel-agents`, `using-git-worktrees`, `finishing-a-development-branch`. Matt has **nothing** here.
+- Execution — Matt's `implement` is **433 bytes** that says *"Use /tdd where possible… then /code-review."* A stub.
+- `receiving-code-review` — Matt covers giving, not receiving.
+
+**Where Matt wins**
+- `diagnosing-bugs`, decisively — thesis (*"build a feedback loop. **This is the skill.**"*), 10 ranked techniques, a HITL script template. obra's Phase 1 is *"Read Error Messages Carefully."*
+- `tdd` teaches test **quality** (seams, tautological tests, horizontal slicing); obra teaches loop **compliance**.
+- Design vocabulary — `codebase-design`, `domain-modeling`. obra has none.
+- Context economy — obra's `writing-skills` is **26KB in one file**.
+
+**Direct contradictions the router must settle**
+
+| | Matt | obra |
+|---|---|---|
+| Refactor | *"not part of the loop"* — belongs to review | step 3 **of** the loop |
+| The human | *"confirm the seams with the user"* | *"Do not pause to check in… prompts waste their time"* |
+| Scope | fire when relevant | `brainstorming`: *"MUST use before any creative work"* + `<HARD-GATE>` blocking all implementation |
+
+## What ships — 48 vendored + 1 authored = 49
+
+**`skills/mattpocock/` — 35** (MIT)
+- engineering (17): `ask-matt`, `code-review`, `codebase-design`, `diagnosing-bugs`, `domain-modeling`, `grill-with-docs`, `implement`, `improve-codebase-architecture`, `prototype`, `research`, `resolving-merge-conflicts`, `setup-matt-pocock-skills`, `tdd`, `to-spec`, `to-tickets`, `triage`, `wayfinder`
+- productivity (5): `grill-me`, `grilling`, `handoff`, `teach`, `writing-great-skills`
+- misc (4): `git-guardrails-claude-code`, `migrate-to-shoehorn`, `scaffold-exercises`, `setup-pre-commit`
+- in-progress (9): `batch-grill-me`, `claude-handoff`, `loop-me`, `setup-ts-deep-modules`, `to-questionnaire`, `wizard`, `writing-beats`, `writing-fragments`, `writing-shape`
+
+**`skills/obra/` — 13** (MIT) — all except `using-superpowers`
+
+**`skills/matej/` — 1 authored**: `using-matej-skills` (the router)
+
+**Excluded — 11, each in `sources.json` with a reason**
+
+| Skill | Reason |
+|---|---|
+| `qa`, `design-an-interface`, `request-refactor-plan`, `ubiquitous-language` | `deprecated/` upstream |
+| `edit-article`, `obsidian-vault` | `personal/` — Matt's own blog and vault |
+| `review` → `code-review`, `to-prd` → `to-spec`, `to-issues` → `to-tickets`, `decision-mapping` → `wayfinder` | deleted upstream; successors already in the 35 |
+| `using-superpowers` | obra's bootstrap — superseded by `using-matej-skills`; two session-openers would conflict |
+
+## Repo structure
+
+```
+XMMM1/skills
+  CLAUDE.md                              agent contract — the boundary, stated first
+  skills/
+    mattpocock/<name>/SKILL.md      35   VENDORED — never hand-edit
+    obra/<name>/SKILL.md            13   VENDORED — never hand-edit
+    matej/using-matej-skills/       1    AUTHORED — the only editable skill
+  .claude-plugin/
+    plugin.json                          generated from sources.json
+    marketplace.json                     name: matej, plugin: matej-skills
+  hooks/
+    hooks.json                           SessionStart: startup|clear|compact
+    session-start                        cats using-matej-skills into every session
+  plans/
+    README.md                            index, one line per plan
+    <slug>.md                            approved plans, committed
+  sources.json                           provenance + SHAs + contentHashes + exclusions
+  sync/sync.mjs                          the sync engine — single entry point
+  .github/workflows/sync.yml             nightly cron -> PR
+  .github/workflows/verify.yml           every PR — enforces the boundary
+  .claude/settings.json                  pre-allowed sync commands
+  NOTICE                                 MIT text + copyright, both upstreams
+  LICENSE, README.md                     README generated from sources.json
+```
+
+Exactly one directory is hand-editable: `skills/matej/`. Everything under `skills/mattpocock/` and
+`skills/obra/` is machine-owned output — stated in `CLAUDE.md`, encoded in paths, enforced by CI (#11).
+
+## Two install surfaces
+
+One `skills/` tree, two ways in — the pattern obra proved (he ships five; Matt ships `.claude-plugin/`
+only, with **no hooks at all**):
+
+| Surface | Command | Reach | Hooks |
+|---|---|---|---|
+| skills.sh | `npx skills add XMMM1/skills` | 70+ agents | **no** — router is a passive skill |
+| Claude Code plugin | `/plugin marketplace add XMMM1/skills`<br>`/plugin install matej-skills@matej` | Claude Code | **yes** — router injected every session |
+
+skills.sh reads `.claude-plugin/marketplace.json` and coordinates rather than duplicating — your own lock
+proves it (`pluginName: "mattpocock-skills"` on 23 entries). Cursor/Codex/Kimi/Gemini manifests are
+deliberately **not** shipped: only Claude Code is installed on this machine (`~/.codex/skills` is empty),
+so those four surfaces would be untestable. Add them when actually used.
+
+## `skills/matej/using-matej-skills` — the router
+
+Authored, never synced. Injected into every session by the hook. Short — it is read constantly.
+Its rulings come from the analysis above, not from taste:
+
+```
+## Rulings — two upstreams, one workflow
+
+TDD          Use `tdd` for what makes a test worth keeping (seams, tautology,
+             vertical slices). Use `test-driven-development` for the discipline
+             of watching red first. CONFLICT: refactoring happens at review,
+             NOT inside the loop — ignore its step 3.
+Debugging    Use `diagnosing-bugs` — build a tight red-capable loop first.
+             `systematic-debugging` only for its root-cause gate.
+Design       Use `grilling` / `to-spec`. IGNORE `brainstorming`'s <HARD-GATE>;
+             it does not gate implementation here.
+The human    Matt's stance wins: confirm seams and decisions with the user.
+             Ignore `subagent-driven-development`'s "do not check in" — that
+             applies to dispatched subagents only.
+Verify       ALWAYS `verification-before-completion` before any done/passing claim.
+Orchestrate  `subagent-driven-development`, `dispatching-parallel-agents`,
+             `using-git-worktrees` — Matt has no equivalent.
+Review       `code-review` to give, `receiving-code-review` to receive.
+Plans        `to-spec` / `to-tickets` (tracker-integrated) over `writing-plans`.
+```
+
+Without the hook this is a suggestion the model may ignore. With it, it is doctrine. That is the entire
+justification for decision #3.
+
+## `sources.json`
+
+Single source of truth. One entry per skill, keyed by frontmatter `name`. Also the input for the
+generated `README.md`, `NOTICE`, `plugin.json`, and `marketplace.json` — the version string lives here
+**once** (obra repeats `6.1.1` across five manifests; that drift is avoidable).
+
+```json
+{
+  "version": "1.0.0",
+  "upstreams": {
+    "mattpocock": { "repo": "mattpocock/skills", "license": "MIT",
+                    "include": ["engineering", "productivity", "misc", "in-progress"],
+                    "exclude": ["deprecated", "personal"] },
+    "obra":       { "repo": "obra/superpowers", "license": "MIT", "include": ["<root>"],
+                    "rewrite": [{ "from": "superpowers:", "to": "" }] }
+  },
+  "skills": {
+    "tdd": { "upstream": "mattpocock", "upstreamPath": "skills/engineering/tdd",
+             "sha": "f21b9c4", "contentHash": "sha256:9c1f…", "concept": "tdd", "status": "active" },
+    "test-driven-development": { "upstream": "obra", "upstreamPath": "skills/test-driven-development",
+             "sha": "a3d91e0", "contentHash": "sha256:4e70…", "concept": "tdd", "status": "active" }
+  },
+  "excluded": {
+    "review": { "upstream": "mattpocock", "reason": "deleted upstream; renamed to code-review" },
+    "using-superpowers": { "upstream": "obra", "reason": "superseded by using-matej-skills" }
+  }
+}
+```
+
+`concept` tags the collisions so the router and README enumerate them without hand-maintenance.
+Local paths are **never** derived from `upstreamPath` — that's what makes re-categorisation a no-op.
+
+## `sync/sync.mjs` — contract
+
+Plain Node, no deps. Per upstream: shallow-clone at HEAD, then per skill:
+
+1. **Content changed** → overwrite, update `sha` + `contentHash`.
+2. **Moved category** → update `upstreamPath` only. Local path unchanged.
+3. **Moved to `deprecated/`** → `status: "deprecated-upstream"` + `deprecatedAt`. **Flag in PR title.** Never auto-delete.
+4. **Deleted upstream** → `status: "deleted-upstream"`, keep the file, flag. Never auto-delete.
+5. **New skill in an included folder** → auto-vendor into the PR. If its `concept` is taken, flag as a new collision needing a router ruling.
+6. **New skill in an unknown folder** → flag only. An unrecognised folder is not implicit opt-in.
+7. **New skill whose `name` is taken** → quarantine **that one**, `status: "needs-adjudication"`, ship the rest (#10).
+
+**Rewrite rules** (applied after fetch, before hashing — deterministic, reapplied every run, so they
+survive overwrite and are *not* hand-edits): `superpowers:<name>` → `<name>`, per the upstream's
+`rewrite` list. Fixes all 29 refs. `contentHash` is computed **post-rewrite**, so CI compares like with like.
+
+Then assert, failing loudly:
+- **Name uniqueness** across all vendored skills.
+- **Frontmatter validity**: `name` + `description` present, `name` matches directory name.
+- **Depth invariant**: every `SKILL.md` at exactly `skills/<source>/<name>/SKILL.md`.
+- **No hand-edits**: every vendored file's hash matches its `contentHash`.
+- **No dangling refs**: no `<upstream>:` namespace survives a rewrite.
+
+Finally regenerate `README.md`, `NOTICE`, `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`.
+
+`node sync/sync.mjs --dry-run` prints the report without writing.
+
+## Adding a new upstream
+
+Never hand-edit `sources.json` — the checks are the value:
+
+```bash
+node sync/sync.mjs --add-upstream owner/repo
+```
+
+1. **License gate, blocking.** MIT/Apache-2.0/BSD → vendor + `NOTICE`. **No license → refuse** (the `vercel-labs/skills` lesson). GPL → refuse.
+2. **Detect layout** — flat or catalog.
+3. **You choose include/exclude folders.**
+4. **Report both collision kinds** (below), and any `<namespace>:` refs needing a rewrite rule.
+5. **Write** `sources.json`; regenerate the derived files.
+
+| Kind | Example | Behaviour |
+|---|---|---|
+| **Concept** overlap | `tdd` vs `test-driven-development` | Ship both, tag `concept`, add a router ruling. |
+| **Exact `name`** clash | `tdd` vs `tdd` | **Cannot install** — both resolve to `~/.agents/skills/tdd/`. Fails hard; you adjudicate. |
+
+Ship-both survives only because Matt and obra chose different words. That is luck, not design.
+
+## Agentic-first
+
+**`CLAUDE.md`** — the contract, read first:
+
+> - `skills/mattpocock/**` and `skills/obra/**` are **vendored output**. Never edit. Changes are destroyed by the next sync and fail CI. To change behaviour: upstream the fix, or copy to `skills/matej/<new-name>/` — a new name, never the same one (the lock is name-keyed).
+> - `skills/matej/**` is the only hand-editable skill directory.
+> - `sources.json`, `README.md`, `NOTICE`, `.claude-plugin/*` are **generated**. Edit `sync/sync.mjs` and re-run.
+> - Add an upstream with `node sync/sync.mjs --add-upstream owner/repo`. Never by hand.
+> - Approved plans live in `plans/`.
+
+**`.github/workflows/verify.yml`** — runs on every PR, makes the above real:
+- Recompute each vendored file's hash vs `contentHash`; red build **naming the path**. Without this, #1 is a suggestion an agent will politely ignore.
+- Re-run name-uniqueness, frontmatter, depth, and dangling-ref asserts.
+- Sync's own PRs pass because it updates file + hash together; a hand edit cannot.
+
+**`.claude/settings.json`** — pre-allow `node sync/sync.mjs --dry-run` and read-only git calls.
+
+`sha` answers *"which upstream version is this?"*; `contentHash` answers *"has anyone touched it since?"*
+Only the second catches a local edit.
+
+## `plans/`
+
+- `plans/<slug>.md` — one approved plan per file. **This plan becomes `plans/vendored-skills-bundle.md` in the first commit.**
+- `plans/README.md` — index: `- [Title](slug.md) — hook`.
+- Committed **when approved, before implementation** — it's the brief, not the postmortem. Supersede rather than delete.
+
+## CI — `.github/workflows/sync.yml`
+
+- `on: schedule` (daily `0 6 * * *`) + `workflow_dispatch`.
+- `actions/setup-node@v4` pinned — the reproducible env Docker would have provided.
+- Run sync; if dirty, PR via `peter-evans/create-pull-request`, stable branch `sync/upstream` so runs amend one PR.
+- PR title leads with the loudest event: `DEPRECATED` / `DELETED` / `NEW COLLISION` > `updated`.
+- `permissions: { contents: write, pull-requests: write }`.
+
+## Migration — irreversible, back up first
+
+Verified safe: zero local edits; all four "deleted" skills are renames whose successors are in the 35.
+
+```bash
+cp ~/.agents/.skill-lock.json ~/skill-lock.backup.json   # first
+
+rm -rf ~/.agents/skills ~/.claude/skills
+rm ~/.agents/.skill-lock.json
+
+npx skills add XMMM1/skills          # 49
+npx skills add vercel-labs/skills    # find-skills — unlicensed, cannot be vendored
+
+# optional, for the router hook:
+#   /plugin marketplace add XMMM1/skills
+#   /plugin install matej-skills@matej
+```
+
+`~/.codex/skills` is empty; no action. The other 11 agents in `lastSelectedAgents` aren't installed —
+the 14-agent fan-out is aspirational.
+
+## Verification
+
+1. `node sync/sync.mjs --dry-run` on a clean checkout → zero drift, zero assertion failures.
+2. `ls ~/.agents/skills | wc -l` → **50** (49 + `find-skills`). Not 41, not 55.
+3. **Every entry in `~/.claude/skills/` is a symlink** — `find ~/.claude/skills -maxdepth 1 -type d` returns only the root. Frozen real dirs were the original bug.
+4. The eleven dropped skills are gone: `ls ~/.claude/skills | grep -E '^(qa|review|to-prd|to-issues|decision-mapping|obsidian-vault|edit-article|design-an-interface|request-refactor-plan|ubiquitous-language|using-superpowers)$'` → empty.
+5. Fresh session: `/grill-me` resolves; skills list shows `code-review` with **no** competing `review`.
+6. `workflow_dispatch` the sync manually — confirm it opens a PR or reports clean. Don't wait a day to learn the cron is broken.
+7. Drift test: point one `sources.json` entry at an older `sha`, run sync, confirm detection + rewrite.
+8. **Boundary test (proves #11).** Edit one character in `skills/mattpocock/tdd/SKILL.md`, open a PR. `verify` **must** fail naming that path. If green, the boundary is theatre.
+9. **Name-clash test.** Add `skills/matej/tdd/` with `name: tdd`. `verify` must fail on uniqueness — this is the failure that would otherwise only surface on a stranger's machine.
+10. **License gate.** `--add-upstream vercel-labs/skills` must refuse and write nothing.
+11. **Rewrite test.** `grep -r "superpowers:" skills/obra/` → **empty**. All 29 refs rewritten.
+12. **Hook test (proves #13).** Install the plugin surface, start a fresh session, confirm the router's text is present — e.g. ask "should I refactor inside the TDD loop?" and get Matt's ruling, not obra's. If the hook doesn't fire, decision #3 collapses and the six collisions are coin flips again.
+
+## Known warts, accepted
+
+- **Six concepts fire nondeterministically** unless the hook lands. On the skills.sh surface (70+ agents) there *is* no hook — the router is passive there, so cross-agent users get the coin flips. The plugin surface is the only place #3 is real.
+- **`setup-matt-pocock-skills` still ships** and assumes Matt's set is the installed one. Watch whether it misleads.
+- **`in-progress/` is churny by design** — Matt may break those 9 without warning. The nightly PR makes that reviewable rather than silent.
+- **`npx skills update` after merging a PR is still manual.** The automation stops at the repo boundary, not at your laptop.
+- **Ship-both works by luck** — any future upstream using an identical `name` cannot be shipped alongside (#10).
+- **The router needs maintenance.** Every new collision an upstream introduces needs a ruling, or it silently becomes a coin flip. Sync flags them; nothing writes the ruling for you.
+- **obra's skills were written for a plugin with hooks.** Vendored, their Iron Law framing still reads, but the enforcement architecture (`using-superpowers` auto-injection) is replaced by ours. We inherit their text, not their machine.

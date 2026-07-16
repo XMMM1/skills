@@ -1,0 +1,11 @@
+XMMM1/skills bundles skills from the upstream projects below.
+Each remains under its own copyright and license. Vendored copies are
+unmodified except for deterministic namespace rewrites listed in sources.json.
+
+## mattpocock/skills (MIT)
+   https://github.com/mattpocock/skills
+   35 skills vendored under skills/mattpocock/
+
+## obra/superpowers (MIT)
+   https://github.com/obra/superpowers
+   13 skills vendored under skills/obra/

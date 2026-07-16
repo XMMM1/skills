@@ -1,0 +1,35 @@
+name: verify
+
+# Enforces the vendored/authored boundary. Without this, "never hand-edit vendored
+# skills" is a convention an agent will politely ignore — and the damage is invisible
+# until a later sync silently overwrites the change.
+#
+# Runs offline: no clone, no network. Just hashes what's committed against sources.json.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Asserts: name uniqueness (the lock is name-keyed, so a dupe breaks install
+      # for everyone), frontmatter validity, the depth-2 invariant, no hand-edits,
+      # and no dangling namespace refs left by a rewrite rule that stopped matching.
+      - name: Verify boundary and invariants
+        run: node sync/sync.mjs --verify
+
+      - name: Router must exist
+        run: test -f skills/matej/using-matej-skills/SKILL.md
+
+      - name: Hook must be executable
+        run: test -x hooks/session-start

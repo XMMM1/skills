@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# SessionStart hook: inject the router into every session.
+#
+# Without this, using-matej-skills is just another skill competing for the model's
+# attention, and the conflicts between the two vendored upstreams go unsettled.
+# With it, the rulings are always in context. This is the whole reason the plugin
+# surface exists alongside `npx skills add`.
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+ROUTER="${PLUGIN_ROOT}/skills/matej/using-matej-skills/SKILL.md"
+
+if [ ! -f "${ROUTER}" ]; then
+  echo "using-matej-skills not found at ${ROUTER}" >&2
+  exit 0 # never block a session over a missing router
+fi
+
+# Strip the YAML frontmatter: it's installer metadata, not instructions.
+router_body="$(sed '1{/^---$/!q;};1,/^---$/d' "${ROUTER}")"
+
+cat <<EOF
+<using-matej-skills>
+The following rulings come from this bundle's router. Two vendored skill sets
+(mattpocock/skills and obra/superpowers) cover overlapping ground and contradict
+each other in places. These rulings settle those conflicts and take precedence
+over the individual skills' own wording.
+
+${router_body}
+</using-matej-skills>
+EOF

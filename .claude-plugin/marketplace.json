@@ -1,0 +1,20 @@
+{
+  "name": "matej",
+  "owner": {
+    "name": "Matej Murn",
+    "url": "https://github.com/XMMM1"
+  },
+  "description": "A vendored, auto-synced bundle of agent skills from mattpocock/skills and obra/superpowers, with a router that settles their conflicts.",
+  "plugins": [
+    {
+      "name": "matej-skills",
+      "source": "./",
+      "version": "1.0.0",
+      "description": "A vendored, auto-synced bundle of agent skills from mattpocock/skills and obra/superpowers, with a router that settles their conflicts.",
+      "author": {
+        "name": "Matej Murn",
+        "url": "https://github.com/XMMM1"
+      }
+    }
+  ]
+}

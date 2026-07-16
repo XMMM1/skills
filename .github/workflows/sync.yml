@@ -1,0 +1,53 @@
+name: sync
+
+# Nightly upstream sync. This is the "I don't want to manually check for updates"
+# machinery: it checks, and it tells you by opening a PR. Merging is the decision.
+#
+# actions/setup-node pinned below is the reproducible environment — no Docker needed,
+# and no always-on host to own.
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Sync upstreams
+        run: node sync/sync.mjs
+
+      - name: Read report
+        id: report
+        run: |
+          echo "title=$(cat .sync-title)" >> "$GITHUB_OUTPUT"
+          rm -f .sync-title
+
+      - name: Open or update PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          # Stable branch: successive nightly runs amend one PR instead of
+          # spawning a new one every day.
+          branch: sync/upstream
+          base: main
+          title: ${{ steps.report.outputs.title }}
+          body-path: .sync-report.md
+          commit-message: ${{ steps.report.outputs.title }}
+          delete-branch: true
+          add-paths: |
+            skills/**
+            sources.json
+            README.md
+            NOTICE
+            .claude-plugin/**
