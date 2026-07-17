@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
   "plugin": {
-    "name": "matej-skills",
-    "marketplace": "matej",
+    "name": "skills",
+    "marketplace": "XMMM1",
     "repo": "XMMM1/skills",
     "description": "A vendored, auto-synced bundle of agent skills from mattpocock/skills and obra/superpowers, with a router that settles their conflicts.",
     "author": {

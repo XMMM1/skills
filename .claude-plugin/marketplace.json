@@ -1,5 +1,5 @@
 {
-  "name": "matej",
+  "name": "XMMM1",
   "owner": {
     "name": "Matej Murn",
     "url": "https://github.com/XMMM1"
@@ -7,14 +7,65 @@
   "description": "A vendored, auto-synced bundle of agent skills from mattpocock/skills and obra/superpowers, with a router that settles their conflicts.",
   "plugins": [
     {
-      "name": "matej-skills",
+      "name": "skills",
       "source": "./",
       "version": "1.0.0",
       "description": "A vendored, auto-synced bundle of agent skills from mattpocock/skills and obra/superpowers, with a router that settles their conflicts.",
       "author": {
         "name": "Matej Murn",
         "url": "https://github.com/XMMM1"
-      }
+      },
+      "skills": [
+        "./skills/matej/using-matej-skills",
+        "./skills/mattpocock/ask-matt",
+        "./skills/mattpocock/batch-grill-me",
+        "./skills/mattpocock/claude-handoff",
+        "./skills/mattpocock/code-review",
+        "./skills/mattpocock/codebase-design",
+        "./skills/mattpocock/diagnosing-bugs",
+        "./skills/mattpocock/domain-modeling",
+        "./skills/mattpocock/git-guardrails-claude-code",
+        "./skills/mattpocock/grill-me",
+        "./skills/mattpocock/grill-with-docs",
+        "./skills/mattpocock/grilling",
+        "./skills/mattpocock/handoff",
+        "./skills/mattpocock/implement",
+        "./skills/mattpocock/improve-codebase-architecture",
+        "./skills/mattpocock/loop-me",
+        "./skills/mattpocock/migrate-to-shoehorn",
+        "./skills/mattpocock/prototype",
+        "./skills/mattpocock/research",
+        "./skills/mattpocock/resolving-merge-conflicts",
+        "./skills/mattpocock/scaffold-exercises",
+        "./skills/mattpocock/setup-matt-pocock-skills",
+        "./skills/mattpocock/setup-pre-commit",
+        "./skills/mattpocock/setup-ts-deep-modules",
+        "./skills/mattpocock/tdd",
+        "./skills/mattpocock/teach",
+        "./skills/mattpocock/to-questionnaire",
+        "./skills/mattpocock/to-spec",
+        "./skills/mattpocock/to-tickets",
+        "./skills/mattpocock/triage",
+        "./skills/mattpocock/wayfinder",
+        "./skills/mattpocock/wizard",
+        "./skills/mattpocock/writing-beats",
+        "./skills/mattpocock/writing-fragments",
+        "./skills/mattpocock/writing-great-skills",
+        "./skills/mattpocock/writing-shape",
+        "./skills/obra/brainstorming",
+        "./skills/obra/dispatching-parallel-agents",
+        "./skills/obra/executing-plans",
+        "./skills/obra/finishing-a-development-branch",
+        "./skills/obra/receiving-code-review",
+        "./skills/obra/requesting-code-review",
+        "./skills/obra/subagent-driven-development",
+        "./skills/obra/systematic-debugging",
+        "./skills/obra/test-driven-development",
+        "./skills/obra/using-git-worktrees",
+        "./skills/obra/verification-before-completion",
+        "./skills/obra/writing-plans",
+        "./skills/obra/writing-skills"
+      ]
     }
   ]
 }

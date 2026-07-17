@@ -286,6 +286,19 @@ function generate(cfg) {
   ].join('\n');
   fs.writeFileSync(path.join(ROOT, 'README.md'), readme);
 
+  // The plugin loader walks skills/<name>/ at depth 1, but our layout is keyed by
+  // source (skills/<source>/<name>/) so it finds nothing on its own. Declaring the
+  // paths explicitly is the documented escape hatch: "skill paths declared in a
+  // manifest are searched at their declared depth". Enumerated, never globbed —
+  // a path that stops resolving must fail loudly, not vanish quietly.
+  const skillPaths = [];
+  for (const src of fs.readdirSync(SKILLS).sort()) {
+    const srcDir = path.join(SKILLS, src);
+    if (!fs.statSync(srcDir).isDirectory()) continue;
+    for (const name of fs.readdirSync(srcDir).sort())
+      if (fs.existsSync(path.join(srcDir, name, 'SKILL.md'))) skillPaths.push(`./skills/${src}/${name}`);
+  }
+
   // The version lives once, in sources.json. obra repeats "6.1.1" across five
   // manifests; generating them is how that drift never starts.
   const dir = path.join(ROOT, '.claude-plugin');
@@ -299,6 +312,7 @@ function generate(cfg) {
     repository: `https://github.com/${cfg.plugin.repo}`,
     license: 'MIT',
     keywords: cfg.plugin.keywords,
+    skills: skillPaths,
   });
   writeJSON(path.join(dir, 'marketplace.json'), {
     name: cfg.plugin.marketplace,
@@ -311,6 +325,7 @@ function generate(cfg) {
         version: cfg.version,
         description: cfg.plugin.description,
         author: cfg.plugin.author,
+        skills: skillPaths,
       },
     ],
   });

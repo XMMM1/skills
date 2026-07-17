@@ -11,7 +11,7 @@ For the router to be injected every session (Claude Code only):
 
 ```
 /plugin marketplace add XMMM1/skills
-/plugin install matej-skills@matej
+/plugin install skills@XMMM1
 ```
 
 ## Sources
