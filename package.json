@@ -1,0 +1,17 @@
+{
+  "name": "xmmm1-skills",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A vendored, auto-synced bundle of agent skills. Tooling only — the skills themselves are plain markdown under skills/.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.20.0"
+  },
+  "scripts": {
+    "sync": "node sync/sync.mjs",
+    "sync:dry": "node sync/sync.mjs --dry-run",
+    "verify": "node sync/sync.mjs --verify",
+    "update": "npx --yes skills@latest update -g -y"
+  }
+}

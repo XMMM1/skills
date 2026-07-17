@@ -28,14 +28,33 @@ To change a vendored skill's behaviour, pick one:
 `skills` / `excluded` blocks of `sources.json` are all produced by `sync/sync.mjs`.
 Edit the script (or the hand-written top of `sources.json`), then re-run it.
 
+## Node version — run `nvm use` first
+
+The `skills` CLI requires **Node ≥22.20.0**. This machine's default is v16.13.1, on which the CLI
+dies with a misleading `SyntaxError: ... does not provide an export named 'styleText'` rather than a
+version error. `.nvmrc` pins v22.23.1; there is no auto-switch hook, so:
+
+```bash
+nvm use          # reads .nvmrc -> v22.23.1
+```
+
+The global default is deliberately left alone: other repos here pin Node 16 and 20 (`dg1-docs`
+v16.17.0, `sirius` v16.20.2) and would break if it moved.
+
 ## Commands
 
 ```bash
-node sync/sync.mjs --dry-run            # report drift, write nothing
-node sync/sync.mjs                      # fetch, overwrite, regenerate
-node sync/sync.mjs --verify             # asserts only; no network, no writes (this is what CI runs)
+nvm use                                 # ALWAYS first — see above
+
+npm run sync:dry                        # report drift, write nothing
+npm run sync                            # fetch, overwrite, regenerate
+npm run verify                          # asserts only; no network, no writes (this is what CI runs)
+npm run update                          # pull this bundle's latest into ~/.claude/skills
+
 node sync/sync.mjs --add-upstream o/r   # license-gate + register a new upstream
 ```
+
+`sync/sync.mjs` itself runs on Node 16+; only the `skills` CLI needs 22.
 
 Never add an upstream by hand-editing `sources.json` — the license gate and clash detection are the
 entire point of the command. An unlicensed repo cannot be vendored (all rights reserved), which is
