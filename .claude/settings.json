@@ -6,7 +6,16 @@
       "Bash(git status)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(gh repo *)",
+      "Bash(command -v gh)",
+      "Bash(python3 -c \"import yaml,sys; yaml.safe_load\\(open\\('/Users/matejmurn/workspace/matej/agenticSkills/.github/workflows/sync.yml'\\)\\); print\\('YAML OK'\\)\")",
+      "Bash(npx --yes yaml-lint .github/workflows/sync.yml)",
+      "Bash(command -v brew)",
+      "Bash(brew --version)",
+      "Bash(brew install *)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)"
     ]
   }
 }

@@ -9,13 +9,14 @@
     {
       "name": "skills",
       "source": "./",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "A vendored, auto-synced bundle of agent skills from mattpocock/skills and obra/superpowers, with a router that settles their conflicts.",
       "author": {
         "name": "Matej Murn",
         "url": "https://github.com/XMMM1"
       },
       "skills": [
+        "./skills/matej/base-role",
         "./skills/matej/using-matej-skills",
         "./skills/matej/xmmm1-skills-quickstart",
         "./skills/mattpocock/ask-matt",

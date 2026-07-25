@@ -1,7 +1,9 @@
 name: sync
 
 # Nightly upstream sync. This is the "I don't want to manually check for updates"
-# machinery: it checks, and it tells you by opening a PR. Merging is the decision.
+# machinery: it checks, opens a PR, and flags it for auto-merge — the PR merges
+# itself once verify.yml goes green. A red verify check is what stops it and is
+# the only signal that needs a human.
 #
 # actions/setup-node pinned below is the reproducible environment — no Docker needed,
 # and no always-on host to own.
@@ -48,6 +50,7 @@ jobs:
           rm -f .sync-title
 
       - name: Open or update PR
+        id: pr
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.SYNC_PAT }}
@@ -65,3 +68,12 @@ jobs:
             README.md
             NOTICE
             .claude-plugin/**
+
+      # Merge unattended once verify.yml goes green. Requires "Allow auto-merge"
+      # plus a required status check on main — without a required check GitHub
+      # refuses to enable auto-merge. gh is preinstalled on the runner.
+      - name: Enable auto-merge
+        if: steps.pr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ secrets.SYNC_PAT }}
+        run: gh pr merge --auto --squash "${{ steps.pr.outputs.pull-request-number }}" --repo "${{ github.repository }}"

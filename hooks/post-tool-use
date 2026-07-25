@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# PostToolUse hook: template, currently a no-op.
+#
+# Fires after every tool call matching the matcher in hooks/hooks.json (currently "Write|Edit").
+# The call's details and result arrive as JSON on stdin:
+#   { "tool_name": "Edit", "tool_input": { "file_path": "...", ... }, "tool_response": ..., ... }
+#
+# Anything printed to stdout is fed back to the agent as feedback on the completed call —
+# useful for running a linter/formatter on the edited file and surfacing its complaints.
+# Exit 0 always; PostToolUse cannot undo the call.
+#
+# Example (requires jq):
+#   file="$(jq -r '.tool_input.file_path // empty' <<<"${payload}")"
+#   [ -n "${file}" ] && npx prettier --check "${file}" 2>&1 || true
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+payload="$(cat)" # the hook JSON; unused until you add logic below
+
+exit 0

@@ -30,8 +30,10 @@ nvm use          # in this repo, reads .nvmrc -> v22.23.1
 /plugin install skills@XMMM1
 ```
 
-The plugin is the recommended surface, and the only one that installs the `SessionStart` hook — the
-hook is what injects the router into every session. Claude Code only.
+The plugin is the recommended surface, and the only one that installs hooks — the `SessionStart`
+hook injects the router into every session, plus (once you activate them, see `hooks/README.md`)
+a base role and any per-project context a repo provides in `.claude/xmmm1-context.md`. No-op
+`PreToolUse`/`PostToolUse` templates are wired and ready for logic. Claude Code only.
 
 ```bash
 npx skills add XMMM1/skills

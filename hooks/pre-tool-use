@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# PreToolUse hook: template, currently a no-op (always allows).
+#
+# Fires before every tool call matching the matcher in hooks/hooks.json (currently "Bash").
+# The tool call's details arrive as JSON on stdin:
+#   { "tool_name": "Bash", "tool_input": { "command": "...", ... }, ... }
+#
+# To block a call, either:
+#   - exit 2, with the reason on stderr (shown to the agent), or
+#   - emit {"decision": "block", "reason": "..."} on stdout and exit 0.
+# Exit 0 with no decision output = allow.
+#
+# Example (requires jq):
+#   cmd="$(jq -r '.tool_input.command // empty' <<<"${payload}")"
+#   case "${cmd}" in *"push --force"*) echo "force push blocked" >&2; exit 2;; esac
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+payload="$(cat)" # the hook JSON; unused until you add logic below
+
+exit 0
