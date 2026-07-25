@@ -149,8 +149,8 @@
     "to-tickets": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/to-tickets",
-      "sha": "9603c1c",
-      "contentHash": "sha256:27f8a34226cc7109cd87895bb31e0163607348a6ef3653b8836b0be30dcf00e5",
+      "sha": "ed37663",
+      "contentHash": "sha256:b9eb31fb1c671feb6ba56dc8afc86f5da9992aa307e9e0e0449aee2d4d55f1f2",
       "status": "active"
     },
     "triage": {
@@ -296,92 +296,92 @@
     "brainstorming": {
       "upstream": "obra",
       "upstreamPath": "skills/brainstorming",
-      "sha": "d884ae0",
-      "contentHash": "sha256:a1202a6a5e8d86659745e69030c06bfb033f265d8a276f29b24b8a57c4809399",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:5e6e91b078faa0029407be720134a4b0cc9636612600e418adbf56ea9772f453",
       "status": "active"
     },
     "dispatching-parallel-agents": {
       "upstream": "obra",
       "upstreamPath": "skills/dispatching-parallel-agents",
-      "sha": "d884ae0",
-      "contentHash": "sha256:375d7445c2b7fb800f526e5cf486d9eb90b1258b0a0efd55eb4eeb0a41deb05e",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:1acb899b23c2bdb5af5961e7b97ba43fb2a5593822db755747ef3d5db9f825a4",
       "status": "active"
     },
     "executing-plans": {
       "upstream": "obra",
       "upstreamPath": "skills/executing-plans",
-      "sha": "d884ae0",
-      "contentHash": "sha256:ce05c875032c7c76c465a9fcaf5b582a71110cb25c3cf4409a83d52bcf8f5942",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:20f14343c2132af10d9335efee4f046c13547a73fc1071a51121de7687e5e53a",
       "status": "active"
     },
     "finishing-a-development-branch": {
       "upstream": "obra",
       "upstreamPath": "skills/finishing-a-development-branch",
-      "sha": "d884ae0",
-      "contentHash": "sha256:0c140b3e01a984ea1a3d2b79b83406b137847597eaa9a740f6a71a94bccafda4",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:1fbb4cc3d58f7892dd9ac7690c569261a71d7a84a0057bb78566978108cef4c5",
       "status": "active"
     },
     "receiving-code-review": {
       "upstream": "obra",
       "upstreamPath": "skills/receiving-code-review",
-      "sha": "d884ae0",
-      "contentHash": "sha256:976093a40d900b304e7049900c989f2db9b362e732a7590d4e4b143b5fb0d7de",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:e5dd23be2d93f751c8b28d647c4b139754aedfe75648cd8e1100e47f5da0c3c5",
       "status": "active"
     },
     "requesting-code-review": {
       "upstream": "obra",
       "upstreamPath": "skills/requesting-code-review",
-      "sha": "d884ae0",
-      "contentHash": "sha256:65cad7b7959ddd26423d94d72a8e8ce669d49be5d3ce9309dd151a999ecf54e1",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:0f41514c70ea491d649aaff72c9c82adce333a674b33c1f2983a98f9e196803d",
       "status": "active"
     },
     "subagent-driven-development": {
       "upstream": "obra",
       "upstreamPath": "skills/subagent-driven-development",
-      "sha": "d884ae0",
-      "contentHash": "sha256:120f0b73a5086bdff368737d38433f99afcc046810b38ff95f47f92b9cfc328d",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:bcaac634fae9d14d34d29be66241759fa5a7ce12e78b00fc2fc75ac098317234",
       "status": "active"
     },
     "systematic-debugging": {
       "upstream": "obra",
       "upstreamPath": "skills/systematic-debugging",
-      "sha": "d884ae0",
-      "contentHash": "sha256:76bf02f701818fe0a4255e28428319b37bd53625b9b0b1ac677bfde781a8e7d6",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:47e255c05e5feca3fd9998473ee5a47e36a7274ab20e4faf3da375d6e94dccd2",
       "status": "active"
     },
     "test-driven-development": {
       "upstream": "obra",
       "upstreamPath": "skills/test-driven-development",
-      "sha": "d884ae0",
-      "contentHash": "sha256:7c3b1fa71c313b7c51b451858ec855c0f22fd5925bf0ec9b385382c1bcd3d75b",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:bd763591ed282d295c262b885816c60a38f1ad71b179f7062d9f74e043827d9d",
       "status": "active"
     },
     "using-git-worktrees": {
       "upstream": "obra",
       "upstreamPath": "skills/using-git-worktrees",
-      "sha": "d884ae0",
-      "contentHash": "sha256:e6306e69246610dc203c8639584542e16bfbb0b09d0adddac533ca009fa93180",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:98dc7da4ead1fe3c523c7ac314082f1f85114ad5e6ec39d4426b4a7f76ed9d0c",
       "status": "active"
     },
     "verification-before-completion": {
       "upstream": "obra",
       "upstreamPath": "skills/verification-before-completion",
-      "sha": "d884ae0",
-      "contentHash": "sha256:9f704f1335e61a3ce258270d9f492cf487af55f1db0b9fc1bc5fa2173ebd38fa",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:d8a53168f152b6163bd3447f7d4c20b6b4cddf6bd907f9aa5856b514c032db0e",
       "status": "active"
     },
     "writing-plans": {
       "upstream": "obra",
       "upstreamPath": "skills/writing-plans",
-      "sha": "d884ae0",
-      "contentHash": "sha256:183a8b506560b9a3203b53445e993b1aded604ae2617f5101a10ad3b7c4be91f",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:d53ac4103cce52d50490633216cdc69f54b23f88067fa3ddfbf567527b459e16",
       "status": "active"
     },
     "writing-skills": {
       "upstream": "obra",
       "upstreamPath": "skills/writing-skills",
-      "sha": "d884ae0",
-      "contentHash": "sha256:972064c7c7a367f91098d9919414ac9224656e99d1104042318ef99032d0bd81",
+      "sha": "3dcbd5c",
+      "contentHash": "sha256:d90e4f6878c20a72b902f3b9c57ff34bc1670f49b10b6ffa3a63f1589bdddc53",
       "status": "active"
     }
   },
