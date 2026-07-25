@@ -11,14 +11,27 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch:
 
+# The PR is pushed and opened with SYNC_PAT (a fine-grained PAT), not the built-in
+# GITHUB_TOKEN: this repo blocks Actions from creating PRs, and PRs opened by the
+# built-in token wouldn't trigger verify.yml anyway. The default token only checks out.
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      # Fail with a readable error instead of a cryptic one downstream if the
+      # secret is missing (or has expired and been deleted).
+      - name: Require SYNC_PAT
+        env:
+          SYNC_PAT: ${{ secrets.SYNC_PAT }}
+        run: |
+          test -n "$SYNC_PAT" || {
+            echo "::error::SYNC_PAT secret is not set. Create a fine-grained PAT (contents + pull-requests: write, scoped to this repo) and add it in Settings -> Secrets and variables -> Actions."
+            exit 1
+          }
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -35,8 +48,9 @@ jobs:
           rm -f .sync-title
 
       - name: Open or update PR
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
+          token: ${{ secrets.SYNC_PAT }}
           # Stable branch: successive nightly runs amend one PR instead of
           # spawning a new one every day.
           branch: sync/upstream

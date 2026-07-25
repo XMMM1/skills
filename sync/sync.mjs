@@ -262,6 +262,10 @@ function generate(cfg) {
     `/plugin install ${cfg.plugin.name}@${cfg.plugin.marketplace}`,
     '```',
     '',
+    // The quickstart is user-invoked, so nobody can type it until they have already
+    // installed the bundle. This link is the only path from landing here to doing that.
+    'New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — which install surface to pick, what to run once per repo, and how to take an idea to shipped.',
+    '',
     '## Sources',
     '',
     '| upstream | license | skills |',
