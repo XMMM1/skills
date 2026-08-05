@@ -20,7 +20,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 
 | upstream | license | skills |
 | --- | --- | --- |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 35 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 36 |
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | 13 |
 | _authored_ | MIT | 3 |
 
@@ -29,7 +29,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | skill | source | concept | |
 | --- | --- | --- | --- |
 | `ask-matt` | mattpocock | — | |
-| `batch-grill-me` | mattpocock | — | |
+| `batch-grill-me` | mattpocock | — | ⚠ deleted upstream |
 | `brainstorming` | obra | — | |
 | `claude-handoff` | mattpocock | — | |
 | `code-review` | mattpocock | — | |
@@ -71,8 +71,9 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `wayfinder` | mattpocock | — | |
 | `wizard` | mattpocock | — | |
 | `writing-beats` | mattpocock | — | |
+| `writing-for-agents` | mattpocock | — | |
 | `writing-fragments` | mattpocock | — | |
-| `writing-great-skills` | mattpocock | — | |
+| `writing-great-skills` | mattpocock | — | ⚠ deleted upstream |
 | `writing-plans` | obra | — | |
 | `writing-shape` | mattpocock | — | |
 | `writing-skills` | obra | — | |
