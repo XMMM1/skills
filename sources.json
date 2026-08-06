@@ -51,8 +51,8 @@
     "ask-matt": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/ask-matt",
-      "sha": "a621cc4",
-      "contentHash": "sha256:9d3d98557623622e2827f2466c572426716d9048c145ef7d4e0a62d3d939ba8e",
+      "sha": "8b36d4f",
+      "contentHash": "sha256:274dda1f5c8b105595a8906102e45f08eca92598ffeca76769d38d3bb45c2571",
       "status": "active"
     },
     "code-review": {
@@ -128,15 +128,15 @@
     "setup-matt-pocock-skills": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/setup-matt-pocock-skills",
-      "sha": "a621cc4",
-      "contentHash": "sha256:7ed6151543d54f2ea4dceee7447d2031feef7ba5d154bf5795f7dc34dc4921c6",
+      "sha": "8b36d4f",
+      "contentHash": "sha256:132cfdc077fd448b262f2185ef5152f5d4a2c7ad637f0a7183da2d6880deb5e2",
       "status": "active"
     },
     "tdd": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/tdd",
-      "sha": "9603c1c",
-      "contentHash": "sha256:c7bd017fedd677de169904f610438647a586350f82bd80ce0b12ad9d3cebddf5",
+      "sha": "8b36d4f",
+      "contentHash": "sha256:020e48193f19c303f462ac6c6bf16548f10e3b1f706df562f8fb8f6b3efb43a6",
       "status": "active"
     },
     "to-spec": {
@@ -206,8 +206,8 @@
     "wizard": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/wizard",
-      "sha": "9603c1c",
-      "contentHash": "sha256:a469ab99ba9010c3c91b13cb53d707375e56605295aab1ae71315d84855c622b",
+      "sha": "8b36d4f",
+      "contentHash": "sha256:bacaeb2db5caadbb715d411bd2c00a6995ad817f19121ff0bc6b8aaffff0e8c6",
       "status": "active"
     },
     "writing-beats": {
@@ -389,8 +389,15 @@
     "writing-for-agents": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/writing-for-agents",
-      "sha": "a621cc4",
-      "contentHash": "sha256:d37de4c20242e80b361c10c794637b00f3437e56586b8502567a0e49647470da",
+      "sha": "8b36d4f",
+      "contentHash": "sha256:ab9bd0b8194e79b371583548024d57781eda0f6797d39d64f0bdd81ba585b705",
+      "status": "active"
+    },
+    "wait-what": {
+      "upstream": "mattpocock",
+      "upstreamPath": "skills/productivity/wait-what",
+      "sha": "8b36d4f",
+      "contentHash": "sha256:89ae282bf3d8ef45ef22aec9610261d466c32e1e4cfb27b27d40e5f3cd197533",
       "status": "active"
     }
   },
