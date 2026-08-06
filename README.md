@@ -20,7 +20,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 
 | upstream | license | skills |
 | --- | --- | --- |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 36 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 37 |
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | 13 |
 | _authored_ | MIT | 3 |
 
@@ -68,6 +68,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `triage` | mattpocock | — | |
 | `using-git-worktrees` | obra | — | |
 | `verification-before-completion` | obra | — | |
+| `wait-what` | mattpocock | — | |
 | `wayfinder` | mattpocock | — | |
 | `wizard` | mattpocock | — | |
 | `writing-beats` | mattpocock | — | |
