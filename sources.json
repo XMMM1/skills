@@ -58,22 +58,22 @@
     "code-review": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/code-review",
-      "sha": "a621cc4",
-      "contentHash": "sha256:f930f131777d21df5c9c1caa18c9f890b2f6513cf5c33b801f223c65003de5bd",
+      "sha": "84fdeff",
+      "contentHash": "sha256:45b9d5e7742f65efda4f5fc53d377f50b451da3687ded48f41b7ae565f8742c8",
       "status": "active"
     },
     "codebase-design": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/codebase-design",
-      "sha": "9603c1c",
-      "contentHash": "sha256:c46b49303a81c7fc8934d0f4fbc44382cdecb73942d85d8d7db3523407fff8fa",
+      "sha": "84fdeff",
+      "contentHash": "sha256:d2c52f5938ce4f570f16bd8b1c194b07524b57da046a86be1617b390f14f6409",
       "status": "active"
     },
     "diagnosing-bugs": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/diagnosing-bugs",
-      "sha": "9603c1c",
-      "contentHash": "sha256:73be315b6528e88c48c6f797d5fa7faa284fc468e6ab795c4bfe5161d4440e2f",
+      "sha": "84fdeff",
+      "contentHash": "sha256:7cce376c32380dcc16c8f91cf249b5a317575cf464273b85bde762b9278f63ce",
       "status": "active"
     },
     "domain-modeling": {
@@ -100,8 +100,8 @@
     "improve-codebase-architecture": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/improve-codebase-architecture",
-      "sha": "9603c1c",
-      "contentHash": "sha256:d3682058df92c259b47c36503baa02345d5811758621b5dc03081d5ba0f7b69b",
+      "sha": "84fdeff",
+      "contentHash": "sha256:98ca22a0717a1e659e9f4714d2c7fa27afdd3497243cd2290fe5a4e04e111e78",
       "status": "active"
     },
     "prototype": {
@@ -206,8 +206,8 @@
     "wizard": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/wizard",
-      "sha": "8b36d4f",
-      "contentHash": "sha256:bacaeb2db5caadbb715d411bd2c00a6995ad817f19121ff0bc6b8aaffff0e8c6",
+      "sha": "84fdeff",
+      "contentHash": "sha256:c8bee82bf582b9889d08187819b273bafc700b3dbb2fcc00b2880225d43c22a8",
       "status": "active"
     },
     "writing-beats": {
