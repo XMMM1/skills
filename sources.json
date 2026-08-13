@@ -298,8 +298,8 @@
     "brainstorming": {
       "upstream": "obra",
       "upstreamPath": "skills/brainstorming",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:5e6e91b078faa0029407be720134a4b0cc9636612600e418adbf56ea9772f453",
+      "sha": "b36e082",
+      "contentHash": "sha256:b29f0c4068279fb924ef3a467682d23be68700f90ca59990bba35c24088fd55e",
       "status": "active"
     },
     "dispatching-parallel-agents": {
@@ -319,8 +319,8 @@
     "finishing-a-development-branch": {
       "upstream": "obra",
       "upstreamPath": "skills/finishing-a-development-branch",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:1fbb4cc3d58f7892dd9ac7690c569261a71d7a84a0057bb78566978108cef4c5",
+      "sha": "b36e082",
+      "contentHash": "sha256:1da9182001d887c0fb8c62aeee35c8f65b438b32a30b79104baedcca9e0ebef6",
       "status": "active"
     },
     "receiving-code-review": {
@@ -333,15 +333,15 @@
     "requesting-code-review": {
       "upstream": "obra",
       "upstreamPath": "skills/requesting-code-review",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:0f41514c70ea491d649aaff72c9c82adce333a674b33c1f2983a98f9e196803d",
+      "sha": "b36e082",
+      "contentHash": "sha256:f6b7bba1eac5267f0c317cf9e9bbfea3ab7ead130b1285cc79f66611232cd96f",
       "status": "active"
     },
     "subagent-driven-development": {
       "upstream": "obra",
       "upstreamPath": "skills/subagent-driven-development",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:bcaac634fae9d14d34d29be66241759fa5a7ce12e78b00fc2fc75ac098317234",
+      "sha": "b36e082",
+      "contentHash": "sha256:c6eb385593f0a6ae4acecd604ac9ae8a213723caf5eccd24d74e5e9e4d8cffce",
       "status": "active"
     },
     "systematic-debugging": {
@@ -375,15 +375,15 @@
     "writing-plans": {
       "upstream": "obra",
       "upstreamPath": "skills/writing-plans",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:d53ac4103cce52d50490633216cdc69f54b23f88067fa3ddfbf567527b459e16",
+      "sha": "b36e082",
+      "contentHash": "sha256:6a0d1b3a309266ca51e80b33d07bf05859095c0c7543dd98aa4ae339acdb1b0f",
       "status": "active"
     },
     "writing-skills": {
       "upstream": "obra",
       "upstreamPath": "skills/writing-skills",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:d90e4f6878c20a72b902f3b9c57ff34bc1670f49b10b6ffa3a63f1589bdddc53",
+      "sha": "b36e082",
+      "contentHash": "sha256:f835b197a3d6a58230d9c18e0ff81dfd653af572eff0d34116db0a1b0cf77abc",
       "status": "active"
     },
     "writing-for-agents": {
