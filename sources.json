@@ -58,8 +58,8 @@
     "code-review": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/code-review",
-      "sha": "84fdeff",
-      "contentHash": "sha256:45b9d5e7742f65efda4f5fc53d377f50b451da3687ded48f41b7ae565f8742c8",
+      "sha": "068b6e0",
+      "contentHash": "sha256:6cb1823b04e23c5809c9706e177f008c75787399ef5c706ff0c47c5839195611",
       "status": "active"
     },
     "codebase-design": {
@@ -72,8 +72,8 @@
     "diagnosing-bugs": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/diagnosing-bugs",
-      "sha": "84fdeff",
-      "contentHash": "sha256:7cce376c32380dcc16c8f91cf249b5a317575cf464273b85bde762b9278f63ce",
+      "sha": "068b6e0",
+      "contentHash": "sha256:83d408830f57fd8c2b0b65277ab24539441b9ee8f55329cc91d5fcb5f8041b6b",
       "status": "active"
     },
     "domain-modeling": {
@@ -86,8 +86,8 @@
     "grill-with-docs": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/grill-with-docs",
-      "sha": "9603c1c",
-      "contentHash": "sha256:84554e18aac963e26214159bfb522ddbd72dab710f43176727ca14f432033567",
+      "sha": "068b6e0",
+      "contentHash": "sha256:2dff19547f0f72000f8b88868e21b7d76c27cf5c7ececc6edf4042bbe06157ac",
       "status": "active"
     },
     "implement": {
@@ -100,8 +100,8 @@
     "improve-codebase-architecture": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/improve-codebase-architecture",
-      "sha": "84fdeff",
-      "contentHash": "sha256:98ca22a0717a1e659e9f4714d2c7fa27afdd3497243cd2290fe5a4e04e111e78",
+      "sha": "068b6e0",
+      "contentHash": "sha256:2c3224398c6131054d9d2ae9bed67fc3b0a8b1f1ddbe174e6c02e8b24d454fa7",
       "status": "active"
     },
     "prototype": {
@@ -135,36 +135,36 @@
     "tdd": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/tdd",
-      "sha": "8b36d4f",
-      "contentHash": "sha256:020e48193f19c303f462ac6c6bf16548f10e3b1f706df562f8fb8f6b3efb43a6",
+      "sha": "068b6e0",
+      "contentHash": "sha256:2296df494dab255637a39bc0c81018c3f48aa68c632c767d5f8049dc87194120",
       "status": "active"
     },
     "to-spec": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/to-spec",
-      "sha": "a621cc4",
-      "contentHash": "sha256:14211cd48167ee7fd243fbb5a6ca380ec5641253298a3fbe779888ff93867f65",
+      "sha": "068b6e0",
+      "contentHash": "sha256:c80f60908c54db9696e9e5447446b9c2f6281380dc09e426934da9442f9e6f2d",
       "status": "active"
     },
     "to-tickets": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/to-tickets",
-      "sha": "ed37663",
-      "contentHash": "sha256:b9eb31fb1c671feb6ba56dc8afc86f5da9992aa307e9e0e0449aee2d4d55f1f2",
+      "sha": "068b6e0",
+      "contentHash": "sha256:477e049bbb4534e1035b93ccbc7d2bd2f2811fb1e9a702d26484ae68658b65e4",
       "status": "active"
     },
     "triage": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/triage",
-      "sha": "a621cc4",
-      "contentHash": "sha256:71bf2eed918085d4f6912a2b37369993b2b268b1557e4354e2ef1ba5954eafd6",
+      "sha": "068b6e0",
+      "contentHash": "sha256:6e76cddfaa1bca4b12565ca0ec277f83fbd399a41b3549f772e7a78be419570a",
       "status": "active"
     },
     "wayfinder": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/wayfinder",
-      "sha": "a621cc4",
-      "contentHash": "sha256:462158ee37389454d44fd1b5e3d8ae5f75650fd621ae843a1d22a53082814b44",
+      "sha": "068b6e0",
+      "contentHash": "sha256:b9754e5af0c286737d9e7adf0ac82154d4d12546ba5a0fe91d01a3cf3a53375c",
       "status": "active"
     },
     "batch-grill-me": {
@@ -178,8 +178,8 @@
     "claude-handoff": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/claude-handoff",
-      "sha": "a621cc4",
-      "contentHash": "sha256:8a952fc5e03a81fd3767f20c04d22a604154f6ecd43da7eb1f046989346c2bd6",
+      "sha": "068b6e0",
+      "contentHash": "sha256:99632866042a4a877bd32717cdaeacb47f1e8c32325900b31d937cc4fbcd64fd",
       "status": "active"
     },
     "loop-me": {
@@ -192,8 +192,8 @@
     "setup-ts-deep-modules": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/setup-ts-deep-modules",
-      "sha": "9603c1c",
-      "contentHash": "sha256:6502306a758ac25596550c7645d0a95b32c3f377959968f68ae43fafd448cf55",
+      "sha": "068b6e0",
+      "contentHash": "sha256:a3923d1cbacb9caebd1bd854ecd61dc82ba9029196e12eef1f334bef17df2862",
       "status": "active"
     },
     "to-questionnaire": {
@@ -262,22 +262,22 @@
     "grill-me": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/grill-me",
-      "sha": "9603c1c",
-      "contentHash": "sha256:000514e9633b1a2df8bef98549e99b6eaf1a8c3fabfad0e3b328440b3b226c90",
+      "sha": "068b6e0",
+      "contentHash": "sha256:14c292fe16c0aed833cbbabb0983515c8d665fb6061d9755b13dba870363323b",
       "status": "active"
     },
     "grilling": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/grilling",
-      "sha": "a621cc4",
-      "contentHash": "sha256:f82bb664166568b1d7e0323ea13b45b5df4a096bb6b25de7a946e0e58de0529d",
+      "sha": "068b6e0",
+      "contentHash": "sha256:1bdadd4e2b0ed98757860456e6f94f932100e71a8892d2d559ec0f85311a5ddd",
       "status": "active"
     },
     "handoff": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/handoff",
-      "sha": "9603c1c",
-      "contentHash": "sha256:c97a305f5ca0b6fa21ca82a009ac5a553acd02aab63cf59de939f75ac7797393",
+      "sha": "068b6e0",
+      "contentHash": "sha256:fe287d0ae54ed66c99522e272af1020323ba4d4698ef60fe1fa63f042dffd313",
       "status": "active"
     },
     "teach": {
