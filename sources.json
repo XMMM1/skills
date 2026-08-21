@@ -269,8 +269,8 @@
     "grilling": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/grilling",
-      "sha": "068b6e0",
-      "contentHash": "sha256:1bdadd4e2b0ed98757860456e6f94f932100e71a8892d2d559ec0f85311a5ddd",
+      "sha": "0ab1b63",
+      "contentHash": "sha256:d5833e50e0081bbf5133b6c6b61aa8ba9ffae66e9071404b61e45b18f4cdb57e",
       "status": "active"
     },
     "handoff": {
