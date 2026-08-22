@@ -399,6 +399,13 @@
       "sha": "885e2ca",
       "contentHash": "sha256:d8c5157780c8b4933f887639779f807c51f18e0564bf6236e1a4cb2c793bd73c",
       "status": "active"
+    },
+    "implement-spec": {
+      "upstream": "mattpocock",
+      "upstreamPath": "skills/in-progress/implement-spec",
+      "sha": "5b15a47",
+      "contentHash": "sha256:72831ec425699dd16d41827c5dcf6ac4b0dbbd32ce0c419d30f52ded735cf0ad",
+      "status": "active"
     }
   },
   "excluded": {
