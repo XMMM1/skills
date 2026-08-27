@@ -23,20 +23,41 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      # Fail with a readable error instead of a cryptic one downstream if the
-      # secret is missing (or has expired and been deleted).
-      - name: Require SYNC_PAT
+      # A non-empty secret is not the same as a working one. An expired PAT gets a 401,
+      # git falls back to an interactive prompt it can't answer on a runner, and the run
+      # dies 20s later inside create-pull-request as a bare "git failed with exit code
+      # 128" that points at git rather than at the credential. So prove the token works
+      # here, before checkout, while there's still something readable to say about it.
+      - name: Validate SYNC_PAT
         env:
-          SYNC_PAT: ${{ secrets.SYNC_PAT }}
+          GH_TOKEN: ${{ secrets.SYNC_PAT }}
         run: |
-          test -n "$SYNC_PAT" || {
+          test -n "$GH_TOKEN" || {
             echo "::error::SYNC_PAT secret is not set. Create a fine-grained PAT (contents + pull-requests: write, scoped to this repo) and add it in Settings -> Secrets and variables -> Actions."
             exit 1
           }
+          # Needs only the auto-granted Metadata:Read, so this tests liveness without
+          # assuming any particular permission is present.
+          gh api "repos/$GITHUB_REPOSITORY" >/dev/null 2>&1 || {
+            echo "::error::SYNC_PAT is set but rejected by GitHub — it has expired, been revoked, or lost access to $GITHUB_REPOSITORY. Mint a replacement (contents + pull-requests: write, scoped to this repo), then: gh secret set SYNC_PAT --repo $GITHUB_REPOSITORY"
+            exit 1
+          }
+          # Best-effort early warning. GitHub sends this header only for PATs that carry
+          # an expiry; with a no-expiration token it's absent and this is a silent no-op.
+          # It must never fail the run — a missing header is not an error.
+          # The header value is multi-word ("2026-08-24 10:56:08 UTC"), so take
+          # everything after the colon rather than a single field.
+          exp=$(gh api "repos/$GITHUB_REPOSITORY" -i 2>/dev/null \
+                | tr -d '\r' \
+                | awk 'tolower($1) ~ /^github-authentication-token-expiration:/ {sub(/^[^:]*: */,""); print}') || true
+          if [ -n "$exp" ]; then
+            left=$(( ( $(date -d "$exp" +%s) - $(date +%s) ) / 86400 ))
+            [ "$left" -gt 14 ] || echo "::warning::SYNC_PAT expires in ${left} day(s) ($exp). Rotate it before the nightly sync starts failing."
+          fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
