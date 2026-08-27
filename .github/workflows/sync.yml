@@ -37,11 +37,14 @@ jobs:
             exit 1
           }
           # Needs only the auto-granted Metadata:Read, so this tests liveness without
-          # assuming any particular permission is present.
-          gh api "repos/$GITHUB_REPOSITORY" >/dev/null 2>&1 || {
-            echo "::error::SYNC_PAT is set but rejected by GitHub — it has expired, been revoked, or lost access to $GITHUB_REPOSITORY. Mint a replacement (contents + pull-requests: write, scoped to this repo), then: gh secret set SYNC_PAT --repo $GITHUB_REPOSITORY"
+          # assuming any particular permission is present. Echo gh's own message: 401
+          # (dead token) and 403/404 (live token, wrong repo scope) need different
+          # fixes, and hiding the difference just moves the cryptic error up a layer.
+          if ! err=$(gh api "repos/$GITHUB_REPOSITORY" 2>&1 >/dev/null); then
+            echo "::error::SYNC_PAT was rejected by GitHub for $GITHUB_REPOSITORY — see the API error below. Note that regenerating or re-dating a PAT mints a NEW token string; the Actions secret does not update itself. After minting, run: gh secret set SYNC_PAT --repo $GITHUB_REPOSITORY"
+            echo "$err"
             exit 1
-          }
+          fi
           # Best-effort early warning. GitHub sends this header only for PATs that carry
           # an expiry; with a no-expiration token it's absent and this is a silent no-op.
           # It must never fail the run — a missing header is not an error.
