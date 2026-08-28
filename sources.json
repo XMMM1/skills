@@ -406,6 +406,13 @@
       "sha": "5b15a47",
       "contentHash": "sha256:72831ec425699dd16d41827c5dcf6ac4b0dbbd32ce0c419d30f52ded735cf0ad",
       "status": "active"
+    },
+    "retro": {
+      "upstream": "mattpocock",
+      "upstreamPath": "skills/in-progress/retro",
+      "sha": "6654f6b",
+      "contentHash": "sha256:482c9a4e65f781f7202cf8c07a7b10276f5db0e02a2be28bd8bf36e28565f848",
+      "status": "active"
     }
   },
   "excluded": {
