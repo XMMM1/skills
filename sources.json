@@ -410,8 +410,8 @@
     "retro": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/retro",
-      "sha": "6654f6b",
-      "contentHash": "sha256:482c9a4e65f781f7202cf8c07a7b10276f5db0e02a2be28bd8bf36e28565f848",
+      "sha": "959a8e9",
+      "contentHash": "sha256:09c4f9fe72fc5bc8e486a2bbb32dd785ca6264c56a53dd1bf9a334af72586efd",
       "status": "active"
     }
   },
