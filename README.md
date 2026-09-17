@@ -20,7 +20,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 
 | upstream | license | skills |
 | --- | --- | --- |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 39 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 40 |
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | 13 |
 | _authored_ | MIT | 3 |
 
@@ -49,6 +49,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `improve-codebase-architecture` | mattpocock | — | |
 | `loop-me` | mattpocock | — | |
 | `migrate-to-shoehorn` | mattpocock | — | |
+| `pr` | mattpocock | — | |
 | `prototype` | mattpocock | — | |
 | `receiving-code-review` | obra | — | |
 | `requesting-code-review` | obra | — | |
