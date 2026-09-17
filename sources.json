@@ -413,6 +413,13 @@
       "sha": "959a8e9",
       "contentHash": "sha256:09c4f9fe72fc5bc8e486a2bbb32dd785ca6264c56a53dd1bf9a334af72586efd",
       "status": "active"
+    },
+    "pr": {
+      "upstream": "mattpocock",
+      "upstreamPath": "skills/in-progress/pr",
+      "sha": "73a3e94",
+      "contentHash": "sha256:0b1109305c4d6a0464ac7b417c3f23773ab2e1e1b3d9611ae6552897d091767c",
+      "status": "active"
     }
   },
   "excluded": {
