@@ -417,8 +417,8 @@
     "pr": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/pr",
-      "sha": "73a3e94",
-      "contentHash": "sha256:0b1109305c4d6a0464ac7b417c3f23773ab2e1e1b3d9611ae6552897d091767c",
+      "sha": "c55ee46",
+      "contentHash": "sha256:3c6d2011a221681e673f9a2f11844707e2c879ae909c5a828148d4ff3871b110",
       "status": "active"
     }
   },
