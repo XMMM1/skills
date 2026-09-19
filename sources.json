@@ -298,8 +298,8 @@
     "brainstorming": {
       "upstream": "obra",
       "upstreamPath": "skills/brainstorming",
-      "sha": "b36e082",
-      "contentHash": "sha256:b29f0c4068279fb924ef3a467682d23be68700f90ca59990bba35c24088fd55e",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:a70fba9bbe817b48ee9211cafaf2bfea2cf253d2d87fc51b75ffd4d0cca3be7a",
       "status": "active"
     },
     "dispatching-parallel-agents": {
@@ -312,8 +312,8 @@
     "executing-plans": {
       "upstream": "obra",
       "upstreamPath": "skills/executing-plans",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:20f14343c2132af10d9335efee4f046c13547a73fc1071a51121de7687e5e53a",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:5202e59e6e279f3ce7166b8bc6a75ec6c2ec7ba9fc60731f65ce55c86d898d15",
       "status": "active"
     },
     "finishing-a-development-branch": {
@@ -333,29 +333,29 @@
     "requesting-code-review": {
       "upstream": "obra",
       "upstreamPath": "skills/requesting-code-review",
-      "sha": "b36e082",
-      "contentHash": "sha256:f6b7bba1eac5267f0c317cf9e9bbfea3ab7ead130b1285cc79f66611232cd96f",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:e70a585c7a129907ca7f9fa8775866c4aae969f707c8da6d81178d5b5931d52f",
       "status": "active"
     },
     "subagent-driven-development": {
       "upstream": "obra",
       "upstreamPath": "skills/subagent-driven-development",
-      "sha": "b36e082",
-      "contentHash": "sha256:c6eb385593f0a6ae4acecd604ac9ae8a213723caf5eccd24d74e5e9e4d8cffce",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:2f59409890b41ecd1e58dae133fa8f1abde601d3d2d8ca5b71f58b8df6f4cbef",
       "status": "active"
     },
     "systematic-debugging": {
       "upstream": "obra",
       "upstreamPath": "skills/systematic-debugging",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:47e255c05e5feca3fd9998473ee5a47e36a7274ab20e4faf3da375d6e94dccd2",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:ed970001ad6af47b82390a1e5d558b9eae8712a255f055e645b0e82832c8f521",
       "status": "active"
     },
     "test-driven-development": {
       "upstream": "obra",
       "upstreamPath": "skills/test-driven-development",
-      "sha": "3dcbd5c",
-      "contentHash": "sha256:bd763591ed282d295c262b885816c60a38f1ad71b179f7062d9f74e043827d9d",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:a7256d8fb219d57aad75490fa93eb01a347302394a02c8e852f3b848bae07099",
       "status": "active"
     },
     "using-git-worktrees": {
@@ -375,15 +375,15 @@
     "writing-plans": {
       "upstream": "obra",
       "upstreamPath": "skills/writing-plans",
-      "sha": "b36e082",
-      "contentHash": "sha256:6a0d1b3a309266ca51e80b33d07bf05859095c0c7543dd98aa4ae339acdb1b0f",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:91dc7e46194f7392bfaaf0b47d88fe307d5dcbd9907051531adf0780e546ca35",
       "status": "active"
     },
     "writing-skills": {
       "upstream": "obra",
       "upstreamPath": "skills/writing-skills",
-      "sha": "b36e082",
-      "contentHash": "sha256:f835b197a3d6a58230d9c18e0ff81dfd653af572eff0d34116db0a1b0cf77abc",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:1c15b4ed30a99f40762373de4c04c7b7e95213c7cca9ae05ab79d7694993e125",
       "status": "active"
     },
     "writing-for-agents": {
@@ -419,6 +419,13 @@
       "upstreamPath": "skills/in-progress/pr",
       "sha": "c55ee46",
       "contentHash": "sha256:3c6d2011a221681e673f9a2f11844707e2c879ae909c5a828148d4ff3871b110",
+      "status": "active"
+    },
+    "diagnosing-superpowers": {
+      "upstream": "obra",
+      "upstreamPath": "skills/diagnosing-superpowers",
+      "sha": "5bf4e78",
+      "contentHash": "sha256:4fc90005548401e24578e442c0761064628d5dce8b638fb5ae2a2cd0a93d851e",
       "status": "active"
     }
   },
