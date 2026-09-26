@@ -375,8 +375,8 @@
     "writing-plans": {
       "upstream": "obra",
       "upstreamPath": "skills/writing-plans",
-      "sha": "5bf4e78",
-      "contentHash": "sha256:91dc7e46194f7392bfaaf0b47d88fe307d5dcbd9907051531adf0780e546ca35",
+      "sha": "8ca22db",
+      "contentHash": "sha256:3f5187129ffa42629e7b0e424f366b60200285f1b74de3701c33bb7d1d29afbe",
       "status": "active"
     },
     "writing-skills": {
