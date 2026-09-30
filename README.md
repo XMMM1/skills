@@ -55,7 +55,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `receiving-code-review` | obra | — | |
 | `requesting-code-review` | obra | — | |
 | `research` | mattpocock | — | |
-| `resolving-merge-conflicts` | mattpocock | — | |
+| `resolving-merge-conflicts` | mattpocock | — | ⚠ deleted upstream |
 | `retro` | mattpocock | — | |
 | `scaffold-exercises` | mattpocock | — | |
 | `setup-matt-pocock-skills` | mattpocock | — | |
