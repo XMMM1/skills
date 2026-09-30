@@ -51,8 +51,8 @@
     "ask-matt": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/ask-matt",
-      "sha": "885e2ca",
-      "contentHash": "sha256:2573e1b4a9921e6720ab4da121c40f9ee302d0f9cbbe28037204fb7c40863e11",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:4d7a383efe16d133ab76e5ffd44bfe3d9ff05fb9feedf3e8eaa968a590e5f63e",
       "status": "active"
     },
     "code-review": {
@@ -65,22 +65,22 @@
     "codebase-design": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/codebase-design",
-      "sha": "885e2ca",
-      "contentHash": "sha256:826e65f8d718794b0647dd50122d3c388c6e860c608d6aa313d7d716ff535933",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:e91e18258598832efe27af7e3c423ab262c6f8b8ecb6262d8fbb80d626ef0e19",
       "status": "active"
     },
     "diagnosing-bugs": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/diagnosing-bugs",
-      "sha": "885e2ca",
-      "contentHash": "sha256:3eaddfa5b028a2d4ca47731bb7a64cae28a0e8cb1ca802d201e754a1cc23d5a3",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:79cca571387cbb4e9f254c3f93fb8be51d36ebe6f3854d26d006c1f9e7c87b82",
       "status": "active"
     },
     "domain-modeling": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/domain-modeling",
-      "sha": "885e2ca",
-      "contentHash": "sha256:2cc88b237a4704f9fe2057492024856a48ea803a5b9257b1c1e3174eb1f13a09",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:18a9314d338b8135e4108d1d31d2fd57ad289cf8bf31d2acd6a6f3053ac22a38",
       "status": "active"
     },
     "grill-with-docs": {
@@ -100,8 +100,8 @@
     "improve-codebase-architecture": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/improve-codebase-architecture",
-      "sha": "885e2ca",
-      "contentHash": "sha256:86096700ab48a5fb3d8b8dd73b60b4474925d63e4b3585ec07e5979a04e9ce2d",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:21e81aed6d25a2b16ad0e6b9ec65b398145a110d11fd76951263d13372822e9d",
       "status": "active"
     },
     "prototype": {
@@ -123,20 +123,21 @@
       "upstreamPath": "skills/engineering/resolving-merge-conflicts",
       "sha": "885e2ca",
       "contentHash": "sha256:9072fa5a56004c0c6abfa073dfb2629c9ac49118d38406b65f6313f0b8f45711",
-      "status": "active"
+      "status": "deleted-upstream",
+      "deletedAt": "2026-09-30"
     },
     "setup-matt-pocock-skills": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/setup-matt-pocock-skills",
-      "sha": "885e2ca",
-      "contentHash": "sha256:570d12b3caf6c468d77e0aba8602efc7a5346697a77cb5372f623cf67247784b",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:00ea45e6dbe99b412788ad3ca8dc3091d7fb0ab10f72848905739493013f686b",
       "status": "active"
     },
     "tdd": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/tdd",
-      "sha": "885e2ca",
-      "contentHash": "sha256:2da488cb71308948f58928bbbae6d55d060d5414d5bb3ec7ee7d4bb73c670442",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:c4236fd83d4629d4aed684403fd277aece9feb347c798e964a9a78a2ae1eb654",
       "status": "active"
     },
     "to-spec": {
@@ -156,8 +157,8 @@
     "triage": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/triage",
-      "sha": "885e2ca",
-      "contentHash": "sha256:69a9c32839882c53bf8cae65b53ab309e75b873960144fc7cd55e3215adbf9ed",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:9c6b69d13831d354c1a62eaa047e3160617f9b035d411555268a343b51e96a0c",
       "status": "active"
     },
     "wayfinder": {
@@ -396,29 +397,29 @@
     "wait-what": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/wait-what",
-      "sha": "885e2ca",
-      "contentHash": "sha256:d8c5157780c8b4933f887639779f807c51f18e0564bf6236e1a4cb2c793bd73c",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:7eb4f8dd850b68708fb62fe2d7486b633246bd388e745f6cb6744d47b7a73b2c",
       "status": "active"
     },
     "implement-spec": {
       "upstream": "mattpocock",
-      "upstreamPath": "skills/in-progress/implement-spec",
-      "sha": "5b15a47",
-      "contentHash": "sha256:72831ec425699dd16d41827c5dcf6ac4b0dbbd32ce0c419d30f52ded735cf0ad",
+      "upstreamPath": "skills/engineering/implement-spec",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:3e613d4c4ad1c95dc3489fa447a420875dd2b6b6750eace3dcbc4d218a7d6623",
       "status": "active"
     },
     "retro": {
       "upstream": "mattpocock",
-      "upstreamPath": "skills/in-progress/retro",
+      "upstreamPath": "skills/engineering/retro",
       "sha": "959a8e9",
       "contentHash": "sha256:09c4f9fe72fc5bc8e486a2bbb32dd785ca6264c56a53dd1bf9a334af72586efd",
       "status": "active"
     },
     "pr": {
       "upstream": "mattpocock",
-      "upstreamPath": "skills/in-progress/pr",
-      "sha": "c55ee46",
-      "contentHash": "sha256:3c6d2011a221681e673f9a2f11844707e2c879ae909c5a828148d4ff3871b110",
+      "upstreamPath": "skills/engineering/pr",
+      "sha": "d81f3a1",
+      "contentHash": "sha256:fd6364a4c6714b4978b23abcbb170eaddeb99da87f2efee1f6e9baf9dfc2a446",
       "status": "active"
     },
     "diagnosing-superpowers": {
