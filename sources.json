@@ -51,8 +51,8 @@
     "ask-matt": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/ask-matt",
-      "sha": "d81f3a1",
-      "contentHash": "sha256:4d7a383efe16d133ab76e5ffd44bfe3d9ff05fb9feedf3e8eaa968a590e5f63e",
+      "sha": "4588b32",
+      "contentHash": "sha256:0173067a65de11c925d4dcf89408698ca5df828d2ab5effbe21997332107e679",
       "status": "active"
     },
     "code-review": {
@@ -427,6 +427,13 @@
       "upstreamPath": "skills/diagnosing-superpowers",
       "sha": "5bf4e78",
       "contentHash": "sha256:4fc90005548401e24578e442c0761064628d5dce8b638fb5ae2a2cd0a93d851e",
+      "status": "active"
+    },
+    "chief-of-staff": {
+      "upstream": "mattpocock",
+      "upstreamPath": "skills/in-progress/chief-of-staff",
+      "sha": "4588b32",
+      "contentHash": "sha256:4a9be25a0c77f4442138a71062422977bef97b4ec12ae0a719b61597ba2ba0a7",
       "status": "active"
     }
   },
