@@ -48,6 +48,16 @@ skill sets contradict each other unrefereed. Choose this only if you need the re
 Installing both surfaces double-loads all 49 skills — every skill appears twice, once bare and once
 `skills:`-prefixed. Harmless, wasteful, confusing. Pick one.
 
+**Keeping it fresh.** With the plugin, the `SessionStart` hook refreshes the `npx skills add` copy
+at most once a day, in the background. If you chose `npx skills add`, run this once from a clone
+of the repo (it can't be automatic — that surface installs no hooks):
+
+```bash
+scripts/install-auto-update.sh    # --uninstall to remove; XMMM1_AUTO_UPDATE=0 to pause
+```
+
+Either way you are told at the next session start whenever an update happened, or failed.
+
 ## Part 2 — Configure the repo, once
 
 ```

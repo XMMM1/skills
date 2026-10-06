@@ -31,5 +31,5 @@ jobs:
       - name: Router must exist
         run: test -f skills/matej/using-matej-skills/SKILL.md
 
-      - name: Hook must be executable
-        run: test -x hooks/session-start
+      - name: Hooks and scripts must be executable
+        run: test -x hooks/session-start && test -x hooks/auto-update && test -x scripts/install-auto-update.sh
