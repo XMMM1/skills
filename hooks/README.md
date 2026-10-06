@@ -13,6 +13,22 @@ fires on that surface.
 | PreToolUse | `Bash` | `pre-tool-use` | No-op template — always allows |
 | PostToolUse | `Write\|Edit` | `post-tool-use` | No-op template — no feedback |
 
+## Daily auto-update
+
+`session-start` launches `auto-update` in the background (detached, silent). It runs
+`npx skills@latest update -g -y` at most once per 24h — only when the CLI's global lock
+(`~/.agents/.skill-lock.json`) exists — and finds a Node >= 22.20 itself, since hooks don't run
+`nvm use`. State lives in `${XDG_STATE_HOME:-~/.local/state}/xmmm1-skills/`.
+
+Because it finishes after the session has already printed, it leaves `pending-notice.txt`, and
+the **next** session start shows it: `session-start` switches to JSON output so `systemMessage`
+reaches the user and `additionalContext` makes the model mention it. Notices exist for
+updates (names the added / updated / removed skills), failures and "no Node found". A run with
+no changes is silent. Failed runs retry after 6h.
+
+`npx skills add` users get the same via `scripts/install-auto-update.sh`, which wires
+`auto-update --hook` into `~/.claude/settings.json`. Opt out with `XMMM1_AUTO_UPDATE=0`.
+
 ## Activating the base role
 
 Edit `skills/matej/base-role/SKILL.md`: write your role/behavior text and remove the

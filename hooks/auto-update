@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+# Daily auto-update of the globally installed skills. Launched in the background by
+# session-start (or by a SessionStart entry that scripts/install-auto-update.sh adds for
+# `npx skills add` users). It never prints to stdout — stdout of a hook is session context —
+# and it always exits 0.
+#
+# The update finishes after the session that started it has already printed its context, so the
+# result goes to pending-notice.txt; the NEXT session-start shows it to the user.
+#   - changes applied  -> notice listing added / updated / removed skills
+#   - failure / skip   -> notice saying so (silence would hide a broken updater)
+#   - nothing changed  -> no notice; nothing happened
+#
+# Opt out with XMMM1_AUTO_UPDATE=0.
+
+set -uo pipefail
+
+[ "${XMMM1_AUTO_UPDATE:-1}" = "0" ] && exit 0
+
+STATE="${XDG_STATE_HOME:-${HOME}/.local/state}/xmmm1-skills"
+SKILL_LOCK="${HOME}/.agents/.skill-lock.json"   # written by the `skills` CLI
+OK_STAMP="${STATE}/last-success"
+TRY_STAMP="${STATE}/last-attempt"
+LOG="${STATE}/update.log"
+NOTICE="${STATE}/pending-notice.txt"
+LOCK_DIR="${STATE}/lock"
+BEFORE="${STATE}/skill-lock.before.json"
+
+# --hook: entry point for the SessionStart entry that scripts/install-auto-update.sh adds to
+# ~/.claude/settings.json (the `npx skills add` surface has no session-start script). Start the
+# update detached, then show the user any notice left by the previous run.
+if [ "${1:-}" = "--hook" ]; then
+  nohup "$0" </dev/null >/dev/null 2>&1 &
+  if [ -s "${NOTICE}" ] && command -v node >/dev/null 2>&1 &&
+    node -e '
+      const notice = require("fs").readFileSync(process.argv[1], "utf8").trim();
+      process.stdout.write(JSON.stringify({
+        systemMessage: notice,
+        hookSpecificOutput: {
+          hookEventName: "SessionStart",
+          additionalContext: "<skills-auto-update>\n" + notice +
+            "\nMention this to the user in one short line in your first reply.\n</skills-auto-update>",
+        },
+      }));
+    ' "${NOTICE}"; then
+    rm -f "${NOTICE}"
+  fi
+  exit 0
+fi
+
+# Nothing installed through the CLI -> nothing for this script to update. (Plugin installs are
+# refreshed by Claude Code's marketplace, not by the skills CLI.)
+[ -f "${SKILL_LOCK}" ] || exit 0
+
+mkdir -p "${STATE}" || exit 0
+
+# Throttle: once a day after success, no sooner than 6h after a failed attempt.
+fresh() { [ -f "$1" ] && [ -n "$(find "$1" -mmin "-$2" 2>/dev/null)" ]; }
+fresh "${OK_STAMP}" 1440 && exit 0
+fresh "${TRY_STAMP}" 360 && exit 0
+
+# One run at a time; a lock older than an hour is a crashed run.
+if ! mkdir "${LOCK_DIR}" 2>/dev/null; then
+  [ -n "$(find "${LOCK_DIR}" -mmin +60 2>/dev/null)" ] || exit 0
+  rm -rf "${LOCK_DIR}"; mkdir "${LOCK_DIR}" 2>/dev/null || exit 0
+fi
+trap 'rm -rf "${LOCK_DIR}"' EXIT
+
+touch "${TRY_STAMP}"
+
+# The skills CLI needs Node >= 22.20; hooks don't run `nvm use`, so find one ourselves.
+node_ok() { "$1" -p 'const [a,b]=process.versions.node.split(".").map(Number);a>22||(a===22&&b>=20)' 2>/dev/null | grep -q true; }
+NODE=""
+for candidate in "$(command -v node || true)" $(ls -d "${HOME}"/.nvm/versions/node/v*/bin/node 2>/dev/null | sort -r); do
+  [ -n "${candidate}" ] && [ -x "${candidate}" ] && node_ok "${candidate}" && NODE="${candidate}" && break
+done
+
+if [ -z "${NODE}" ]; then
+  echo "XMMM1 skills auto-update skipped: no Node >= 22.20 found (the skills CLI needs it). Install one with nvm, or set XMMM1_AUTO_UPDATE=0 to stop this." > "${NOTICE}"
+  exit 0
+fi
+
+cp "${SKILL_LOCK}" "${BEFORE}"
+( cd "${HOME}" && PATH="$(dirname "${NODE}"):${PATH}" npx --yes skills@latest update -g -y ) > "${LOG}" 2>&1
+status=$?
+
+if [ "${status}" -ne 0 ]; then
+  echo "XMMM1 skills auto-update failed (exit ${status}); will retry later. Details: ${LOG}" > "${NOTICE}"
+  exit 0
+fi
+
+touch "${OK_STAMP}"
+
+# Diff the lock (skillFolderHash per skill) so the notice names exactly what changed.
+"${NODE}" -e '
+const fs = require("fs");
+const skills = (f) => { try { return JSON.parse(fs.readFileSync(f, "utf8")).skills || {}; } catch (e) { return null; } };
+const before = skills(process.argv[1]), after = skills(process.argv[2]);
+if (!before || !after) process.exit(0); // unreadable lock: say nothing rather than "everything removed"
+const added = Object.keys(after).filter((n) => !(n in before));
+const removed = Object.keys(before).filter((n) => !(n in after));
+const updated = Object.keys(after).filter((n) => n in before && before[n].skillFolderHash !== after[n].skillFolderHash);
+const parts = [];
+if (updated.length) parts.push(updated.length + " updated (" + updated.join(", ") + ")");
+if (added.length) parts.push(added.length + " added (" + added.join(", ") + ")");
+if (removed.length) parts.push(removed.length + " removed (" + removed.join(", ") + ")");
+if (parts.length) console.log("XMMM1 skills auto-updated since your last session: " + parts.join("; ") + ".");
+' "${BEFORE}" "${SKILL_LOCK}" > "${NOTICE}.tmp" 2>/dev/null
+
+if [ -s "${NOTICE}.tmp" ]; then mv "${NOTICE}.tmp" "${NOTICE}"; else rm -f "${NOTICE}.tmp"; fi
+exit 0
