@@ -93,8 +93,8 @@
     "implement": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/implement",
-      "sha": "9603c1c",
-      "contentHash": "sha256:1a7a56bca542f46ff8e42fa5ddd293dab21b38b6dad57e1bf3e76d12e41c5fc2",
+      "sha": "4c8c36b",
+      "contentHash": "sha256:e6863145627192c18d36586bddbe2d8a31755d403b605f8627163afba78d262e",
       "status": "active"
     },
     "improve-codebase-architecture": {
@@ -129,8 +129,8 @@
     "setup-matt-pocock-skills": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/setup-matt-pocock-skills",
-      "sha": "d81f3a1",
-      "contentHash": "sha256:00ea45e6dbe99b412788ad3ca8dc3091d7fb0ab10f72848905739493013f686b",
+      "sha": "4c8c36b",
+      "contentHash": "sha256:a05ca6e9257a5ced9176eb26600b0da70e9e7b355e863daadd252e157e7375f4",
       "status": "active"
     },
     "tdd": {
@@ -150,8 +150,8 @@
     "to-tickets": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/to-tickets",
-      "sha": "885e2ca",
-      "contentHash": "sha256:5c1691ddf02291d5189213f8ffc82d2b05451131929bbc9e99052f912a05c300",
+      "sha": "4c8c36b",
+      "contentHash": "sha256:6eccfac132d92b949821d154679adc7f597bfc3e8c929f3c03786b92f91b961f",
       "status": "active"
     },
     "triage": {
@@ -277,8 +277,8 @@
     "handoff": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/handoff",
-      "sha": "068b6e0",
-      "contentHash": "sha256:fe287d0ae54ed66c99522e272af1020323ba4d4698ef60fe1fa63f042dffd313",
+      "sha": "4c8c36b",
+      "contentHash": "sha256:77c2607c751b7c522e0208ab113ba4949f8267610d6061323c7ccd3ace21d7da",
       "status": "active"
     },
     "teach": {
@@ -432,8 +432,8 @@
     "chief-of-staff": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/chief-of-staff",
-      "sha": "4588b32",
-      "contentHash": "sha256:4a9be25a0c77f4442138a71062422977bef97b4ec12ae0a719b61597ba2ba0a7",
+      "sha": "4c8c36b",
+      "contentHash": "sha256:dfe28e415ea134412b95f00b4a4ec9c1d4954605b8bf981fba3ea05e9ededa2c",
       "status": "active"
     }
   },
