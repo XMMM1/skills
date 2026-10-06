@@ -4,7 +4,7 @@ A vendored bundle of other people's agent skills, plus one router. Read this bef
 
 ## The one rule
 
-**`skills/mattpocock/**` and `skills/obra/**` are vendored output. Never edit them.**
+**`skills/mattpocock/**`, `skills/obra/**` and `skills/coreyhaines31/**` are vendored output. Never edit them.**
 
 They are copies fetched from upstream. `sync/sync.mjs` overwrites them wholesale — upstream always
 wins, and there is no merge logic anywhere. Any change you make to them:
@@ -14,7 +14,8 @@ wins, and there is no merge logic anywhere. Any change you make to them:
 
 To change a vendored skill's behaviour, pick one:
 
-- **Upstream the fix** — open a PR against `mattpocock/skills` or `obra/superpowers`.
+- **Upstream the fix** — open a PR against `mattpocock/skills`, `obra/superpowers` or
+  `coreyhaines31/marketingskills`.
 - **Copy it to `skills/matej/<new-name>/`** — a **new** name, never the same one. The installer's
   lock file is keyed by frontmatter `name`, so two skills sharing a name cannot both install.
 - **Add a router ruling** in `skills/matej/using-matej-skills/SKILL.md` if the problem is
@@ -76,7 +77,8 @@ Exactly two levels, keyed by **source**. Both parts are load-bearing:
 
 ## Two skill sets that disagree
 
-This bundle vendors mattpocock/skills and obra/superpowers. They contradict each other on
+This bundle vendors mattpocock/skills and obra/superpowers (plus coreyhaines31/marketingskills,
+which conflicts with neither). The first two contradict each other on
 refactoring, on how much to involve the human, and on scope. `skills/matej/using-matej-skills`
 is the tie-breaker and is injected into every session by the `SessionStart` hook. If you add or
 change a ruling, that file is the place.

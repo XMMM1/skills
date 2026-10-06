@@ -14,6 +14,9 @@ tie-breaker. Where it rules, it wins over the individual skills' own wording.
 - **obra/superpowers** — compliance engineering. Assumes you'll rationalize your way out of
   discipline and blocks it. Strongest on verification and multi-agent orchestration.
 
+A third set, **coreyhaines31/marketingskills**, covers marketing (copy, SEO, CRO, ads, email,
+pricing, launches). It overlaps with neither of the above and is covered by one ruling below.
+
 ## Rulings
 
 **TDD → `tdd` is the reference; `test-driven-development` is the discipline.**
@@ -56,6 +59,13 @@ equivalents; prefer them only when running the subagent execution flow.
 **Authoring skills → `writing-great-skills`.**
 Terse and uses progressive disclosure. `writing-skills` is 26KB in one file; consult it only
 for its TDD-for-documentation method (test the skill against a subagent before shipping).
+
+**Marketing → coreyhaines31's skills, unopposed.**
+Copy, SEO, CRO, ads, email, pricing, launches and customer research all go to the marketing set.
+Names that look like engineering skills are different jobs: `customer-research` is market and
+customer research, not `research` (codebase research); `marketing-plan` is a go-to-market plan,
+not `to-spec` or `writing-plans`; `free-tools` is a lead-gen strategy, not `prototype`. Use the
+engineering skills only when you are building the tool or page itself.
 
 ## Notes
 

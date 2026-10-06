@@ -6,8 +6,9 @@ disable-model-invocation: true
 
 # Quickstart
 
-This bundle is 49 skills from two authors who **disagree with each other**, plus a router that
-settles the disagreements. That design is the whole point, and it is also why installing it
+This bundle is skills from three upstreams — two engineering authors who **disagree with each
+other**, plus a marketing set that conflicts with neither — and a router that settles the
+disagreements. That design is the whole point, and it is also why installing it
 casually goes wrong: pick the wrong install surface and you get the conflict without the tie-breaker.
 
 Four parts. Skip Part 1 if you already have the bundle.

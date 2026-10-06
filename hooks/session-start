@@ -3,7 +3,7 @@
 # context — into every session.
 #
 # Without this, using-matej-skills is just another skill competing for the model's
-# attention, and the conflicts between the two vendored upstreams go unsettled.
+# attention, and the conflicts between the vendored upstreams go unsettled.
 # With it, the rulings are always in context. This is the whole reason the plugin
 # surface exists alongside `npx skills add`.
 #
@@ -28,7 +28,8 @@ if [ -f "${ROUTER}" ]; then
 <using-matej-skills>
 The following rulings come from this bundle's router. Two vendored skill sets
 (mattpocock/skills and obra/superpowers) cover overlapping ground and contradict
-each other in places. These rulings settle those conflicts and take precedence
+each other in places; a third (coreyhaines31/marketingskills) covers marketing and
+conflicts with neither. These rulings settle those conflicts and take precedence
 over the individual skills' own wording.
 
 ${router_body}
