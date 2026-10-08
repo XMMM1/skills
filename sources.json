@@ -461,15 +461,15 @@
     "ads": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ads",
-      "sha": "5e721d7",
-      "contentHash": "sha256:11c869a11ebbfe74dc61747da8044ebed156a2b5dc5b282c2022c00415cae5b5",
+      "sha": "b9ba399",
+      "contentHash": "sha256:5e65b8e5312fedabfc46858603d671a2c62e2ace9038c6bac927354720e953aa",
       "status": "active"
     },
     "ai-seo": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ai-seo",
-      "sha": "5e721d7",
-      "contentHash": "sha256:e68ee182f002cab3b00d8c7370645887819e3ec2f1c2624cbbb3f26c1d3f5e75",
+      "sha": "b9ba399",
+      "contentHash": "sha256:4aa70d13e6358054ec6a3ce69098d94a9389269d67c10588d42e1aa777e45607",
       "status": "active"
     },
     "analytics": {
@@ -510,8 +510,8 @@
     "cold-email": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/cold-email",
-      "sha": "dda3841",
-      "contentHash": "sha256:9996d667cb92628d1f62a6e5fc8be855006d2b3a8fea7784b327c8245898d3f9",
+      "sha": "b9ba399",
+      "contentHash": "sha256:7a60d40c16747eaf419364056ac9e5caff74809f5f1db236d9a817b168a83d9e",
       "status": "active"
     },
     "community-marketing": {
@@ -524,8 +524,8 @@
     "competitor-profiling": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/competitor-profiling",
-      "sha": "dda3841",
-      "contentHash": "sha256:372542596dbe71d109ccbe49701b88d2ae5303fe3be93743882251d527212dcd",
+      "sha": "b9ba399",
+      "contentHash": "sha256:5156607453930740ef4d32fc7e726755b95b34f42871e1605c91d5255808c721",
       "status": "active"
     },
     "competitors": {
@@ -538,15 +538,15 @@
     "content-strategy": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/content-strategy",
-      "sha": "dda3841",
-      "contentHash": "sha256:988aaa0118503ecccdce3cdfcdd91a3a421287dcddae5f1ad432a7034634c799",
+      "sha": "b9ba399",
+      "contentHash": "sha256:1512d2f1409ab644fde38354ed0f946ea46da95dde6ee579c504a629ca62c7eb",
       "status": "active"
     },
     "copy-editing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/copy-editing",
-      "sha": "dda3841",
-      "contentHash": "sha256:e4d02883e52af33fcd771b6e1122f18bd21e5cffee9d490ac3ac8e858bf9dbca",
+      "sha": "b9ba399",
+      "contentHash": "sha256:f14985eed105e58d9acf5031ef84453d74376dd885f69cda813626ac87d36f5b",
       "status": "active"
     },
     "copywriting": {
@@ -559,8 +559,8 @@
     "cro": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/cro",
-      "sha": "dda3841",
-      "contentHash": "sha256:a60ba2544f5560e6cad90e46c2e41699b9ddb57b46ad284b762e6210b8f62d40",
+      "sha": "b9ba399",
+      "contentHash": "sha256:4e720164279ed4ca86eee6a27f83b83d15569b59a488a8145765bc1be138ec93",
       "status": "active"
     },
     "customer-research": {
@@ -580,8 +580,8 @@
     "emails": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/emails",
-      "sha": "dda3841",
-      "contentHash": "sha256:923011d41d798329434cbadf666862a89dd1717586b57dee4289806843271e78",
+      "sha": "b9ba399",
+      "contentHash": "sha256:df41e21a8fb8339cf3e0f673999a6021cbd06966c0519497227f205f8546e7ae",
       "status": "active"
     },
     "events": {
@@ -615,8 +615,8 @@
     "launch": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/launch",
-      "sha": "5e721d7",
-      "contentHash": "sha256:8fcac86889e0fc16e185263d42be4120ce8305a09126d5f95feed88c76dd4db3",
+      "sha": "b9ba399",
+      "contentHash": "sha256:e40d8a5f47e4dea3c3d409661224af2328d674c7e4e63006110b7323dc5dbd6e",
       "status": "active"
     },
     "lead-magnets": {
@@ -643,8 +643,8 @@
     "marketing-loops": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/marketing-loops",
-      "sha": "dda3841",
-      "contentHash": "sha256:7b66e0fed258002fe93fbc799ef3d4de7033c5a39c369bac1aede66a30ae20ad",
+      "sha": "b9ba399",
+      "contentHash": "sha256:b37146782a576dc9d44943f43444b311cbb9e488b11a4972e24595de4a3eeb82",
       "status": "active"
     },
     "marketing-plan": {
@@ -713,8 +713,8 @@
     "prospecting": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/prospecting",
-      "sha": "5e721d7",
-      "contentHash": "sha256:adca88241500569725110b5ad03a1c4d5b2be5e40005c9a47509c58b99b5811f",
+      "sha": "b9ba399",
+      "contentHash": "sha256:5ff2ef86ae1e26e8acd45355364d6c65df3693141fae89cffcb67fd5574d646d",
       "status": "active"
     },
     "public-relations": {
@@ -734,15 +734,15 @@
     "revops": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/revops",
-      "sha": "dda3841",
-      "contentHash": "sha256:f34c4ec984aa1deaa80a38b95bdcecbe27a6215e8b8cbf7b9d1c7eadd61b2cce",
+      "sha": "b9ba399",
+      "contentHash": "sha256:157a8ee6814367e22b94a13d3c8d86fdeaf26ce403758582057dee164f68953a",
       "status": "active"
     },
     "sales-enablement": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/sales-enablement",
-      "sha": "dda3841",
-      "contentHash": "sha256:cad9627e613b9b74b20504e9b243c47ed2b339fa73a5fdb06c942b0a8c021432",
+      "sha": "b9ba399",
+      "contentHash": "sha256:2c14738eb7399b2d1e403e5bfc87884b88a207a61d04bfe0dcf7dc938017c2c8",
       "status": "active"
     },
     "schema": {
@@ -755,8 +755,8 @@
     "seo-audit": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/seo-audit",
-      "sha": "dda3841",
-      "contentHash": "sha256:2741176411f522d48bab888776f7b6fb55622306b9488aed1a222d35557921c6",
+      "sha": "b9ba399",
+      "contentHash": "sha256:3c0b55786e70311365179394cd8762cb0f2f8fbaa48689849f485a06bce6cc8c",
       "status": "active"
     },
     "signup": {
@@ -783,8 +783,8 @@
     "social": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/social",
-      "sha": "dda3841",
-      "contentHash": "sha256:f8f02a9fba5c088fbdcd1cdbbdda23d237b0ed89876ff0d118a134cf423b917f",
+      "sha": "b9ba399",
+      "contentHash": "sha256:df43d65897fb4e44b7183809b2f2794d44b274f20b92398e14223b8128b353b5",
       "status": "active"
     },
     "video": {
