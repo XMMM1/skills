@@ -307,8 +307,8 @@
     "brainstorming": {
       "upstream": "obra",
       "upstreamPath": "skills/brainstorming",
-      "sha": "5bf4e78",
-      "contentHash": "sha256:a70fba9bbe817b48ee9211cafaf2bfea2cf253d2d87fc51b75ffd4d0cca3be7a",
+      "sha": "bb92a77",
+      "contentHash": "sha256:288ce524d38fb5c4c73930017f6e6672d5090f353eedc20cffabbb322653e7e5",
       "status": "active"
     },
     "dispatching-parallel-agents": {
@@ -321,8 +321,8 @@
     "executing-plans": {
       "upstream": "obra",
       "upstreamPath": "skills/executing-plans",
-      "sha": "5bf4e78",
-      "contentHash": "sha256:5202e59e6e279f3ce7166b8bc6a75ec6c2ec7ba9fc60731f65ce55c86d898d15",
+      "sha": "bb92a77",
+      "contentHash": "sha256:128e79180be2d40cb94c0df346ad16fde69e2af44b7fe2779ac55dfa75b18235",
       "status": "active"
     },
     "finishing-a-development-branch": {
@@ -342,22 +342,22 @@
     "requesting-code-review": {
       "upstream": "obra",
       "upstreamPath": "skills/requesting-code-review",
-      "sha": "5bf4e78",
-      "contentHash": "sha256:e70a585c7a129907ca7f9fa8775866c4aae969f707c8da6d81178d5b5931d52f",
+      "sha": "bb92a77",
+      "contentHash": "sha256:da21da5cdf7894945c3990bdea317b1be4e2cf553831d22027558ca45a6cc45b",
       "status": "active"
     },
     "subagent-driven-development": {
       "upstream": "obra",
       "upstreamPath": "skills/subagent-driven-development",
-      "sha": "5bf4e78",
-      "contentHash": "sha256:2f59409890b41ecd1e58dae133fa8f1abde601d3d2d8ca5b71f58b8df6f4cbef",
+      "sha": "bb92a77",
+      "contentHash": "sha256:ec6d4572ba77fb584323a6128b65d28ab122386451aac4640d72f76a40895230",
       "status": "active"
     },
     "systematic-debugging": {
       "upstream": "obra",
       "upstreamPath": "skills/systematic-debugging",
-      "sha": "5bf4e78",
-      "contentHash": "sha256:ed970001ad6af47b82390a1e5d558b9eae8712a255f055e645b0e82832c8f521",
+      "sha": "bb92a77",
+      "contentHash": "sha256:9ba844b50a27a1b4bbf72be071d57c1b193ba95167f40630421e9b2bdc348473",
       "status": "active"
     },
     "test-driven-development": {
