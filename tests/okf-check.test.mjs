@@ -159,6 +159,11 @@ test('warns about a concept its index.md does not list', () => {
   assert.match(r.out, /^services\/index\.md:1: warning: index\.md does not list `billing\.md`$/m);
 });
 
+test('ignores links written inside inline code', () => {
+  const r = check(bundle({ ...VALID, 'services/worker.md': concept('type: Service\ndescription: Pushes notes.', 'Link with `[API](/services/missing.md)`.\n') }));
+  assert.match(r.out, /^CONFORMANT: 0 errors, 0 warnings$/m);
+});
+
 test('rejects a path that is not a directory as a usage error', () => {
   const r = check(path.join(bundle(VALID), 'index.md'));
   assert.equal(r.status, 2, r.out);

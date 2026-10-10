@@ -551,6 +551,8 @@ const HEADING = /^ {0,3}(#{1,6})(?:[ \t]+(.*?))?(?:[ \t]+#+)?[ \t]*$/;
 const LIST_ITEM = /^ {0,3}(?:[*+-]|\d{1,9}[.)])[ \t]+(.*)$/;
 const LINK = /!?\[(?:[^\]\\]|\\.)*\]\(\s*<?([^)\s>]+)>?(?:\s+(?:"[^"]*"|'[^']*'|\([^)]*\)))?\s*\)/g;
 const FOOTNOTE = /\[\^([^\]\s]+)\]/g;
+// Inline code shows markdown as text; links and footnotes inside it are not live.
+const withoutCode = (text) => text.replace(/(`+)[^`]*?\1/g, '');
 
 // Lines outside fenced code blocks, as { idx, text }.
 function* prose(lines, from) {
@@ -697,7 +699,7 @@ class Bundle {
       const h = HEADING.exec(text);
       if (h && h[1] === '#' && /^citations$/i.test((h[2] || '').trim()))
         this.report('warning', rel, idx + 1, 'a "# Citations" list is OKF v0.1; v0.2 records sources in `sources` frontmatter');
-      for (const m of text.matchAll(FOOTNOTE)) {
+      for (const m of withoutCode(text).matchAll(FOOTNOTE)) {
         if (ids.has(m[1]) || flagged.has(m[1])) continue;
         flagged.add(m[1]);
         this.report('warning', rel, idx + 1, `footnote [^${m[1]}] matches no \`sources\` entry's \`id\``);
@@ -790,7 +792,7 @@ class Bundle {
   }
 
   checkLinks(rel, idx, text, collect) {
-    for (const m of text.matchAll(LINK)) {
+    for (const m of withoutCode(text).matchAll(LINK)) {
       const abs = this.resolve(rel, m[1]);
       if (abs === null) continue;
       if (!fs.existsSync(abs)) this.report('warning', rel, idx + 1, `link target \`${m[1]}\` does not exist`);
