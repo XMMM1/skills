@@ -59,6 +59,8 @@ it once payment is authorised.
   is midnight UTC: `2026-10-01T00:00:00Z`.
 - **Other keys** are allowed. Keep every key you find, and leave out any field you would have to
   invent.
+- **Quote a value** that contains `: ` or ` #`, or that starts with one of
+  `` [ ] { } , & * ! | > ' " % @ ` ``. Example: `title: "Incident response: freshness alert"`.
 
 ### Body
 

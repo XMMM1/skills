@@ -26,8 +26,9 @@ spec at that version.
 ## Reading a bundle
 
 Use progressive disclosure: open the root `index.md`, follow the section that fits the question to
-the next `index.md`, and open concepts last. Read each `log.md` you pass for changes made after
-the concepts you rely on were verified. Before relying on a concept, read its frontmatter and say
+the next `index.md`, and open concepts last. Index files do not list `log.md`, so look for one in
+each directory you pass, and read it for changes made after the concepts you rely on were
+verified. Before relying on a concept, read its frontmatter and say
 what it implies:
 
 - **Trust:** no `verified` means unverified; `verified` only by non-`human:` actors means
@@ -40,7 +41,8 @@ what it implies:
   footnote has no recorded source.
 - **Attested Computation:** run it the way SPEC §10.5 describes. Supply only its declared
   `parameters`, run its executor, and check the receipt with its attester. `verified` vouches for
-  the definition; only attestation vouches for a run.
+  the definition; only attestation vouches for a run. A figure you could not run this way is
+  unattested, so say so.
 - A link to a missing file is knowledge nobody has written yet, not a broken bundle.
 
 ## Writing
