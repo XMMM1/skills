@@ -60,6 +60,7 @@ npm run sync:dry                        # report drift, write nothing
 npm run sync                            # fetch, overwrite, regenerate
 npm run verify                          # asserts only; no network, no writes (this is what CI runs)
 npm run generate                        # regenerate README, NOTICE, manifests offline
+npm test                                # node:test over tests/ (CI runs it too)
 npm run update                          # pull this bundle's latest into ~/.claude/skills
 
 node sync/sync.mjs --add-upstream o/r   # license-gate + register a new upstream

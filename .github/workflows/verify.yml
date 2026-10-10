@@ -28,6 +28,11 @@ jobs:
       - name: Verify boundary and invariants
         run: node sync/sync.mjs --verify
 
+      # Unit tests for code that ships inside skills (the OKF checker). Offline,
+      # no dependencies: node:test only.
+      - name: Tests
+        run: npm test
+
       - name: Router must exist
         run: test -f skills/matej/using-matej-skills/SKILL.md
 
