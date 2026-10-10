@@ -32,9 +32,10 @@ indexes and log that make them a conformant bundle.
      - `deprecated` or `superseded by …` becomes `deprecated`, with a link to the successor in
        the body.
    - ADRs and glossaries keep their bodies as they are. OKF only adds the frontmatter.
-4. **Keep links relative.** Inside a repository, an OKF reader resolves `/services/api.md` to the
-   bundle root, but GitHub and editors resolve it to the repository root. Relative links work for
-   both, so use them for every new link too, including those in `index.md` and `log.md`.
+4. **Keep links relative.** An OKF reader resolves `/services/api.md` to the bundle root, but
+   GitHub, editors and docs-site generators resolve it to the repository or site root. Relative
+   links work for all of them, so use them for every new link too, including those in `index.md`
+   and `log.md`.
 5. **Give every directory that holds concepts an `index.md`** in the format in
    [authoring.md](authoring.md). The bundle-root `index.md` also gets `okf_version: "0.2"`. A
    directory may already use `index.md` as a prose landing page, as MkDocs and Docusaurus sites

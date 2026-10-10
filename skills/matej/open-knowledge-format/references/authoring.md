@@ -71,7 +71,7 @@ calls it").
 
 **Links follow one style across the bundle**: concepts, `index.md` and `log.md` alike. Keep the
 style the bundle already uses. A new standalone bundle uses bundle-rooted links
-(`/flows/checkout.md`); a bundle inside a repository uses relative links
+(`/flows/checkout.md`); a bundle inside a repository or a docs site uses relative links
 (`../flows/checkout.md`), for the reason in [adopting.md](adopting.md). The examples on this page
 are bundle-rooted.
 
