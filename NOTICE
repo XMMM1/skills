@@ -13,3 +13,10 @@ unmodified except for deterministic namespace rewrites listed in sources.json.
 ## coreyhaines31/marketingskills (MIT)
    https://github.com/coreyhaines31/marketingskills
    50 skills vendored under skills/coreyhaines31/
+
+Authored skills also carry files copied unmodified from the projects below.
+
+## GoogleCloudPlatform/open-knowledge-format (Apache-2.0)
+   https://github.com/GoogleCloudPlatform/open-knowledge-format at ad30107c31c06aec8a7d5636e0d1058118604e6f
+   skills/matej/open-knowledge-format/references/SPEC.md  <-  SPEC.md
+   skills/matej/open-knowledge-format/references/SPEC-LICENSE.md  <-  LICENSE.md
