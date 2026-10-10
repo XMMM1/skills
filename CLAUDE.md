@@ -27,7 +27,16 @@ To change a vendored skill's behaviour, pick one:
 
 `README.md`, `NOTICE`, `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, and the
 `skills` / `excluded` blocks of `sources.json` are all produced by `sync/sync.mjs`.
-Edit the script (or the hand-written top of `sources.json`), then re-run it.
+Edit the script (or the hand-written top of `sources.json`), then re-run it: `npm run generate`
+rewrites them offline, without pulling upstream changes into your diff.
+
+## Third-party files inside authored skills
+
+An authored skill that must work on its own can carry a copied upstream file, as
+`open-knowledge-format` carries the OKF spec. Declare each copy in the hand-written `embedded` block
+of `sources.json` (repo, license, commit, content hash). `npm run generate` lists it in `NOTICE`,
+and `--verify` fails if the copy stops matching its hash. To move to a newer upstream version,
+re-copy the file at the new commit and record the commit and hash. Never edit the copy in place.
 
 ## Node version — run `nvm use` first
 
@@ -50,6 +59,8 @@ nvm use                                 # ALWAYS first — see above
 npm run sync:dry                        # report drift, write nothing
 npm run sync                            # fetch, overwrite, regenerate
 npm run verify                          # asserts only; no network, no writes (this is what CI runs)
+npm run generate                        # regenerate README, NOTICE, manifests offline
+npm test                                # node:test over tests/ (CI runs it too)
 npm run update                          # pull this bundle's latest into ~/.claude/skills
 
 node sync/sync.mjs --add-upstream o/r   # license-gate + register a new upstream

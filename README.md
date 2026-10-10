@@ -23,7 +23,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 41 |
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | 14 |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | MIT | 50 |
-| _authored_ | MIT | 3 |
+| _authored_ | MIT; copied files per NOTICE | 4 |
 
 ## Skills
 

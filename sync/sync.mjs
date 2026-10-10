@@ -8,6 +8,7 @@
 //   node sync/sync.mjs                      fetch, overwrite, regenerate
 //   node sync/sync.mjs --dry-run            report only, write nothing
 //   node sync/sync.mjs --verify             assert only (CI: no network, no writes)
+//   node sync/sync.mjs --generate           regenerate README, NOTICE, manifests (no network)
 //   node sync/sync.mjs --add-upstream o/r   license-gate + register a new upstream
 
 import { execFileSync } from 'node:child_process';
@@ -25,6 +26,7 @@ const AUTHORED = 'matej'; // the one hand-editable source; never synced
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry-run');
 const VERIFY_ONLY = args.includes('--verify');
+const GENERATE_ONLY = args.includes('--generate');
 const ADD_UPSTREAM = args[args.indexOf('--add-upstream') + 1] || null;
 const isAdd = args.includes('--add-upstream');
 
@@ -218,6 +220,25 @@ function assertAll(cfg) {
       }
     }
   }
+
+  // Third-party files copied into an authored skill: the license claim in NOTICE is
+  // "unmodified", so an edit fails here exactly as a vendored hand-edit does.
+  for (const [skill, e] of Object.entries(cfg.embedded || {})) {
+    for (const [file, f] of Object.entries(e.files)) {
+      const rel = `skills/${AUTHORED}/${skill}/${file}`;
+      const abs = path.join(ROOT, rel);
+      if (!fs.existsSync(abs)) {
+        problems.push(`EMBEDDED ${rel}: declared in sources.json but missing`);
+        continue;
+      }
+      const actual = 'sha256:' + createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
+      if (actual !== f.contentHash)
+        problems.push(
+          `EMBEDDED ${rel}\n    recorded ${f.contentHash}\n    actual   ${actual}\n` +
+            `    A copy of ${e.repo}/${f.from} stays byte-identical. To move it, re-copy at a new commit and record the commit and hash.`
+        );
+    }
+  }
   return seen;
 }
 
@@ -235,6 +256,13 @@ function generate(cfg) {
   ];
   for (const [id, up] of Object.entries(cfg.upstreams)) {
     notice.push(`## ${up.repo} (${up.license})`, `   https://github.com/${up.repo}`, `   ${(byUp[id] || []).length} skills vendored under skills/${id}/`, '');
+  }
+  const embedded = Object.entries(cfg.embedded || {});
+  if (embedded.length) notice.push('Authored skills also carry files copied unmodified from the projects below.', '');
+  for (const [skill, e] of embedded) {
+    notice.push(`## ${e.repo} (${e.license})`, `   https://github.com/${e.repo} at ${e.commit}`);
+    for (const [file, f] of Object.entries(e.files)) notice.push(`   skills/${AUTHORED}/${skill}/${file}  <-  ${f.from}`);
+    notice.push('');
   }
   fs.writeFileSync(path.join(ROOT, 'NOTICE'), notice.join('\n'));
 
@@ -271,7 +299,7 @@ function generate(cfg) {
     '| upstream | license | skills |',
     '| --- | --- | --- |',
     ...Object.entries(cfg.upstreams).map(([id, up]) => `| [${up.repo}](https://github.com/${up.repo}) | ${up.license} | ${(byUp[id] || []).length} |`),
-    `| _authored_ | MIT | ${fs.existsSync(path.join(SKILLS, AUTHORED)) ? fs.readdirSync(path.join(SKILLS, AUTHORED)).length : 0} |`,
+    `| _authored_ | MIT${Object.keys(cfg.embedded || {}).length ? '; copied files per NOTICE' : ''} | ${fs.existsSync(path.join(SKILLS, AUTHORED)) ? fs.readdirSync(path.join(SKILLS, AUTHORED)).length : 0} |`,
     '',
     '## Skills',
     '',
@@ -381,7 +409,10 @@ if (isAdd) {
   process.exit(0);
 }
 
-if (VERIFY_ONLY) {
+// Regenerating needs no fetch: everything generate() reads is already committed.
+if (GENERATE_ONLY) generate(cfg);
+
+if (VERIFY_ONLY || GENERATE_ONLY) {
   const seen = assertAll(cfg);
   console.log(`\nverify: ${seen.size} skills\n`);
   if (problems.length) {
