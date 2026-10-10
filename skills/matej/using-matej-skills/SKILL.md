@@ -60,6 +60,12 @@ equivalents; prefer them only when running the subagent execution flow.
 Terse and uses progressive disclosure. `writing-skills` is 26KB in one file; consult it only
 for its TDD-for-documentation method (test the skill against a subagent before shipping).
 
+**OKF bundles → `open-knowledge-format`.**
+It owns the file format of anything in an Open Knowledge Format bundle, and it pins spec v0.2.
+`ai-seo` keeps the marketing call, whether a site should publish an `/okf/` bundle at all; its OKF
+notes describe v0.1, so on the format itself `open-knowledge-format` wins. `domain-modeling` still
+decides what an ADR or glossary says; inside a bundle, that file also takes OKF frontmatter.
+
 **Marketing → coreyhaines31's skills, unopposed.**
 Copy, SEO, CRO, ads, email, pricing, launches and customer research all go to the marketing set.
 Names that look like engineering skills are different jobs: `customer-research` is market and
