@@ -34,10 +34,12 @@ YAML subset (what okf-check can read):
   block mappings and sequences (including "- key: value" items), flow [ ] and
   { } collections, plain, 'single' and "double" quoted scalars (multi-line too),
   | and > block scalars, and # comments. Plain scalars resolve per the YAML 1.2
-  core schema. Anchors (&), aliases (*), tags (!), complex keys (?), document
-  markers and multi-line plain scalars inside [ ] or { } are unsupported: a
-  file using them fails as "unsupported", because okf-check cannot verify it.
-  okf-check never passes a file it could not read.
+  core schema. Unsupported: anchors (&), aliases (*), tags (!), complex keys
+  (?), empty keys, document markers, a tab after "-", and, inside [ ] or { },
+  key: value pairs in a list, collections used as keys, plain scalars spanning
+  lines and continuation lines that are not indented. A file using any of them
+  fails as "unsupported", because okf-check cannot verify it. okf-check never
+  passes a file it could not read.
 
 Exit status: 0 conformant, 1 not conformant, 2 usage error.`;
 
