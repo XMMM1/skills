@@ -220,6 +220,25 @@ function assertAll(cfg) {
       }
     }
   }
+
+  // Third-party files copied into an authored skill: the license claim in NOTICE is
+  // "unmodified", so an edit fails here exactly as a vendored hand-edit does.
+  for (const [skill, e] of Object.entries(cfg.embedded || {})) {
+    for (const [file, f] of Object.entries(e.files)) {
+      const rel = `skills/${AUTHORED}/${skill}/${file}`;
+      const abs = path.join(ROOT, rel);
+      if (!fs.existsSync(abs)) {
+        problems.push(`EMBEDDED ${rel}: declared in sources.json but missing`);
+        continue;
+      }
+      const actual = 'sha256:' + createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
+      if (actual !== f.contentHash)
+        problems.push(
+          `EMBEDDED ${rel}\n    recorded ${f.contentHash}\n    actual   ${actual}\n` +
+            `    A copy of ${e.repo}/${f.from} stays byte-identical. To move it, re-copy at a new commit and record the commit and hash.`
+        );
+    }
+  }
   return seen;
 }
 
@@ -237,6 +256,13 @@ function generate(cfg) {
   ];
   for (const [id, up] of Object.entries(cfg.upstreams)) {
     notice.push(`## ${up.repo} (${up.license})`, `   https://github.com/${up.repo}`, `   ${(byUp[id] || []).length} skills vendored under skills/${id}/`, '');
+  }
+  const embedded = Object.entries(cfg.embedded || {});
+  if (embedded.length) notice.push('Authored skills also carry files copied unmodified from the projects below.', '');
+  for (const [skill, e] of embedded) {
+    notice.push(`## ${e.repo} (${e.license})`, `   https://github.com/${e.repo} at ${e.commit}`);
+    for (const [file, f] of Object.entries(e.files)) notice.push(`   skills/${AUTHORED}/${skill}/${file}  <-  ${f.from}`);
+    notice.push('');
   }
   fs.writeFileSync(path.join(ROOT, 'NOTICE'), notice.join('\n'));
 
@@ -273,7 +299,7 @@ function generate(cfg) {
     '| upstream | license | skills |',
     '| --- | --- | --- |',
     ...Object.entries(cfg.upstreams).map(([id, up]) => `| [${up.repo}](https://github.com/${up.repo}) | ${up.license} | ${(byUp[id] || []).length} |`),
-    `| _authored_ | MIT | ${fs.existsSync(path.join(SKILLS, AUTHORED)) ? fs.readdirSync(path.join(SKILLS, AUTHORED)).length : 0} |`,
+    `| _authored_ | MIT${Object.keys(cfg.embedded || {}).length ? '; copied files per NOTICE' : ''} | ${fs.existsSync(path.join(SKILLS, AUTHORED)) ? fs.readdirSync(path.join(SKILLS, AUTHORED)).length : 0} |`,
     '',
     '## Skills',
     '',

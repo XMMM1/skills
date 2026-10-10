@@ -30,6 +30,14 @@ To change a vendored skill's behaviour, pick one:
 Edit the script (or the hand-written top of `sources.json`), then re-run it: `npm run generate`
 rewrites them offline, without pulling upstream changes into your diff.
 
+## Third-party files inside authored skills
+
+An authored skill that must work on its own can carry a copied upstream file, as
+`open-knowledge-format` carries the OKF spec. Declare each copy in the hand-written `embedded` block
+of `sources.json` (repo, license, commit, content hash). `npm run generate` lists it in `NOTICE`,
+and `--verify` fails if the copy stops matching its hash. To move to a newer upstream version,
+re-copy the file at the new commit and record the commit and hash. Never edit the copy in place.
+
 ## Node version — run `nvm use` first
 
 The `skills` CLI requires **Node ≥22.20.0**. This machine's default is v16.13.1, on which the CLI
