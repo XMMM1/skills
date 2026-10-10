@@ -8,6 +8,7 @@
 //   node sync/sync.mjs                      fetch, overwrite, regenerate
 //   node sync/sync.mjs --dry-run            report only, write nothing
 //   node sync/sync.mjs --verify             assert only (CI: no network, no writes)
+//   node sync/sync.mjs --generate           regenerate README, NOTICE, manifests (no network)
 //   node sync/sync.mjs --add-upstream o/r   license-gate + register a new upstream
 
 import { execFileSync } from 'node:child_process';
@@ -25,6 +26,7 @@ const AUTHORED = 'matej'; // the one hand-editable source; never synced
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry-run');
 const VERIFY_ONLY = args.includes('--verify');
+const GENERATE_ONLY = args.includes('--generate');
 const ADD_UPSTREAM = args[args.indexOf('--add-upstream') + 1] || null;
 const isAdd = args.includes('--add-upstream');
 
@@ -381,7 +383,10 @@ if (isAdd) {
   process.exit(0);
 }
 
-if (VERIFY_ONLY) {
+// Regenerating needs no fetch: everything generate() reads is already committed.
+if (GENERATE_ONLY) generate(cfg);
+
+if (VERIFY_ONLY || GENERATE_ONLY) {
   const seen = assertAll(cfg);
   console.log(`\nverify: ${seen.size} skills\n`);
   if (problems.length) {

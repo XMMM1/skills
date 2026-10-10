@@ -12,6 +12,7 @@
     "sync": "node sync/sync.mjs",
     "sync:dry": "node sync/sync.mjs --dry-run",
     "verify": "node sync/sync.mjs --verify",
+    "generate": "node sync/sync.mjs --generate",
     "update": "npx --yes skills@latest update -g -y"
   }
 }

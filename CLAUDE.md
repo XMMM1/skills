@@ -27,7 +27,8 @@ To change a vendored skill's behaviour, pick one:
 
 `README.md`, `NOTICE`, `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, and the
 `skills` / `excluded` blocks of `sources.json` are all produced by `sync/sync.mjs`.
-Edit the script (or the hand-written top of `sources.json`), then re-run it.
+Edit the script (or the hand-written top of `sources.json`), then re-run it: `npm run generate`
+rewrites them offline, without pulling upstream changes into your diff.
 
 ## Node version — run `nvm use` first
 
@@ -50,6 +51,7 @@ nvm use                                 # ALWAYS first — see above
 npm run sync:dry                        # report drift, write nothing
 npm run sync                            # fetch, overwrite, regenerate
 npm run verify                          # asserts only; no network, no writes (this is what CI runs)
+npm run generate                        # regenerate README, NOTICE, manifests offline
 npm run update                          # pull this bundle's latest into ~/.claude/skills
 
 node sync/sync.mjs --add-upstream o/r   # license-gate + register a new upstream
