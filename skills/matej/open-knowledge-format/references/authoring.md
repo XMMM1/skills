@@ -2,30 +2,30 @@
 
 ## A concept
 
-One concept per file, named in kebab-case for what it describes (`services/billing.md`). Its path
-is its ID, so a rename breaks every link to it.
+One concept per file, named in kebab-case for what it describes (`endpoints/create-order.md`). Its
+path is its ID, so a rename breaks every link to it. Every value below is illustrative:
 
 ```markdown
 ---
-type: Service
-title: Billing
-description: Issues invoices when a user upgrades and stores them in Postgres.
-resource: https://git.example.com/pebble/billing
-tags: [billing, payments]
+type: API Endpoint
+title: Create order
+description: Creates an order from a cart and returns its id.
+resource: https://api.shop.example.com/v2/orders
+tags: [orders, checkout]
 generated: { by: claude-code/claude-opus-5-5, at: 2026-10-10T14:05:00Z }
 sources:
-  - id: billing-design
-    resource: https://wiki.example.com/pebble/billing-design
-    title: Billing design doc
+  - id: orders-openapi
+    resource: https://git.example.com/shop/api/openapi.yaml
+    title: Shop API OpenAPI spec
     last_modified: 2026-10-01T00:00:00Z
 ---
 
-# Responsibilities
+# Request
 
-Exposes `POST /invoices`.[^billing-design] The [API](/services/api.md) calls it when a user
-upgrades.
+`POST /v2/orders` with a `cart_id`.[^orders-openapi] The [checkout flow](/flows/checkout.md) calls
+it once payment is authorised.
 
-[^billing-design]: Billing design doc
+[^orders-openapi]: Shop API OpenAPI spec
 ```
 
 ### Frontmatter
@@ -48,10 +48,11 @@ upgrades.
 - **`sources`** lists every material the content came from. Each entry needs a `resource` (a URL,
   a bundle path, or a scope such as `all queries in project X`). It also takes a stable kebab-case
   `id`, a `title`, and a `last_modified` if you know it. Cite a claim with a footnote labelled with
-  that `id`, as in `[^billing-design]`.
-- **`status`**: `draft` while the concept is incomplete or written from material you could not
-  check. Use `deprecated` once it is superseded, and link the replacement from the body. Leave
-  `status` out when the concept is stable.
+  that `id`, as in `[^orders-openapi]`.
+- **`status`**: `draft` means not yet reviewed, or possibly incomplete (SPEC §5.4). That covers a
+  concept written from material you could not open yourself, such as facts relayed by the user.
+  Use `deprecated` once it is superseded, and link the replacement from the body. Leave `status`
+  out when the concept is stable.
 - **`stale_after`**: the instant to re-check content that has a shelf life, such as a quarterly
   figure or a yearly policy.
 - **Timestamps** are datetimes with an offset: `2026-10-10T14:05:00Z`. A date with no known time
@@ -63,18 +64,25 @@ upgrades.
 
 Write structural markdown: headings, lists, tables and fenced code. Three headings carry meaning:
 `# Schema` for an asset's fields, `# Examples`, and `# Computation` (see below). Link other
-concepts, and let the sentence say what the relationship is ("the [API](/services/api.md) calls
-it"). Match the link style the bundle already uses. A new standalone bundle uses bundle-rooted
-links (`/services/api.md`); a bundle inside a repository uses relative links, for the reason in
-[adopting.md](adopting.md).
+concepts, and let the sentence say what the relationship is ("the [checkout flow](/flows/checkout.md)
+calls it").
+
+**Links follow one style across the bundle**: concepts, `index.md` and `log.md` alike. Keep the
+style the bundle already uses. A new standalone bundle uses bundle-rooted links
+(`/flows/checkout.md`); a bundle inside a repository uses relative links
+(`../flows/checkout.md`), for the reason in [adopting.md](adopting.md). The examples on this page
+are bundle-rooted.
 
 ### Editing, moving, retiring
 
 - **Editing.** When you change a body, update `generated` to yourself and now. A frontmatter-only
   fix, such as a tag, leaves `generated` alone. Keep each `sources` `id` stable, because
   footnotes join on it.
+- **Relationships.** Link a new relationship from the concept you are writing. Changing another
+  concept's body makes you its `generated` author, so if a reverse link belongs there and you
+  were not asked to edit that concept, propose it in your report.
 - **Moving.** Moving or renaming a concept changes its ID. Update every link to it
-  (`grep -rn 'billing.md' <bundle>`) and its index entries, then log the move.
+  (`grep -rn 'create-order.md' <bundle>`) and its index entries, then log the move.
 - **Retiring.** Set `status: deprecated`, link the replacement and keep the file, since links and
   history still point at it.
 
@@ -85,17 +93,18 @@ carry `okf_version: "0.2"` (quoted) and nothing else. Its body groups entries un
 with one entry per concept and per subdirectory:
 
 ```markdown
-# Service
+# API Endpoint
 
-* [API](api.md) - Accepts note edits over HTTPS and writes them to Postgres.
-* [Billing](billing.md) - Issues invoices when a user upgrades and stores them in Postgres.
+* [Create order](create-order.md) - Creates an order from a cart and returns its id.
+* [Get order](get-order.md) - Returns one order by id.
 
 # Subdirectories
 
-* [Runbooks](runbooks/index.md) - How to operate Pebble in production.
+* [Webhooks](webhooks/index.md) - Events the shop sends to partners.
 ```
 
-After ` - ` comes the concept's `description`, copied. Add, rename or remove an entry in the same
+After ` - ` comes the concept's `description`, copied. A subdirectory has no frontmatter, so its
+entry gets one sentence on what its concepts cover. Add, rename or remove an entry in the same
 change as its concept.
 
 ## log.md
@@ -104,10 +113,10 @@ change as its concept.
 # Bundle log
 
 ## 2026-10-10
-* **Creation**: Added the [billing service](/services/billing.md).
+* **Creation**: Added the [create order endpoint](/endpoints/create-order.md).
 
 ## 2026-09-14
-* **Update**: Re-checked the [deploy runbook](/runbooks/deploy.md) against the new pipeline.
+* **Update**: Re-checked the [refund runbook](/runbooks/refunds.md) against the new pipeline.
 ```
 
 Keep one `## YYYY-MM-DD` heading per day, newest first. Put today's entries under today's

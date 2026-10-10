@@ -5,7 +5,7 @@ description: Use when a task involves an Open Knowledge Format (OKF) bundle, a d
 
 # Open Knowledge Format (OKF)
 
-An OKF **bundle** is a directory tree of markdown files. Every file other than `index.md` and
+An OKF **bundle** is a directory tree of markdown files. Every `.md` file other than `index.md` and
 `log.md` is a **concept**: one unit of knowledge, whose ID is its path without `.md`. A bundle is
 **conformant** with OKF v0.2 when:
 
@@ -26,14 +26,21 @@ spec at that version.
 ## Reading a bundle
 
 Use progressive disclosure: open the root `index.md`, follow the section that fits the question to
-the next `index.md`, and open concepts last. Before relying on a concept, read its frontmatter and
-say what it implies:
+the next `index.md`, and open concepts last. Read each `log.md` you pass for changes made after
+the concepts you rely on were verified. Before relying on a concept, read its frontmatter and say
+what it implies:
 
 - **Trust:** no `verified` means unverified; `verified` only by non-`human:` actors means
-  machine-confirmed; a `human:` verifier means human-reviewed.
+  machine-confirmed; a `human:` verifier means human-reviewed. A verification covers the content
+  as it stood at its `at`. Content changed later, shown by a later `generated.at` or a source's
+  later `last_modified`, is not covered.
 - **Lifecycle:** `status: deprecated` is history, so follow its link to the replacement;
-  `status: draft` is incomplete; a `stale_after` in the past means it may be out of date.
-- **Provenance:** a footnote `[^id]` cites the `sources` entry with that `id`.
+  `status: draft` is unreviewed; a `stale_after` in the past means it may be out of date.
+- **Provenance:** a footnote `[^id]` cites the `sources` entry with that `id`. A claim without a
+  footnote has no recorded source.
+- **Attested Computation:** run it the way SPEC §10.5 describes. Supply only its declared
+  `parameters`, run its executor, and check the receipt with its attester. `verified` vouches for
+  the definition; only attestation vouches for a run.
 - A link to a missing file is knowledge nobody has written yet, not a broken bundle.
 
 ## Writing
@@ -57,6 +64,6 @@ and index entries. A check is done when it prints `CONFORMANT` and every warning
 or one you can give a reason for. `--strict` fails on warnings too, which suits CI.
 
 The checker reads a strict YAML subset: block and flow (`[ ]`, `{ }`) collections, plain, quoted
-and `|` / `>` block scalars, and comments. A file that uses anchors, aliases, tags, complex keys
-or document markers fails as unsupported rather than passing unread, so write frontmatter
-without them.
+and `|` / `>` block scalars, and comments. A file that uses anchors, aliases, tags, complex keys,
+document markers or the rarer constructs listed by `--help` fails as unsupported rather than
+passing unread, so write frontmatter without them.
