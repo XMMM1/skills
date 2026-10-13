@@ -471,8 +471,8 @@
     "ad-creative": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ad-creative",
-      "sha": "1efedbc",
-      "contentHash": "sha256:980133501e1db314ce2ce21b19f7cce7d067ab6ce37981c2ab41aa13bf0c82bd",
+      "sha": "28e4a81",
+      "contentHash": "sha256:df9e412f3cb78b675cb397e72c4336ce6dfe935e98dfcf7180e15938e1c5ab0f",
       "status": "active"
     },
     "ads": {
@@ -492,8 +492,8 @@
     "analytics": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/analytics",
-      "sha": "1efedbc",
-      "contentHash": "sha256:5d7bc21b45ac3127d553c04f15eb101c5958abb3a43a65f0a7534bbf8cef9f3d",
+      "sha": "28e4a81",
+      "contentHash": "sha256:5fa029d25c149126ee8bcd99ca5b70ed63ca54c367c5415637c01ae1c9030c50",
       "status": "active"
     },
     "aso": {
@@ -569,8 +569,8 @@
     "copywriting": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/copywriting",
-      "sha": "dda3841",
-      "contentHash": "sha256:b650d739498014122c7c1f06e430140e2cd5fc0c1d25fea9526efb86a929ba1a",
+      "sha": "28e4a81",
+      "contentHash": "sha256:0d7e3fd21d7bb722c24035901541b92505358bce8401b2a75df3a60b9a7e3b19",
       "status": "active"
     },
     "cro": {
@@ -625,8 +625,8 @@
     "influencer-marketing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/influencer-marketing",
-      "sha": "dda3841",
-      "contentHash": "sha256:ce0e21c0fe217e9c063fbbde3f9a114a9d3ec0881c50a1f5e8af9d1efb28ea43",
+      "sha": "28e4a81",
+      "contentHash": "sha256:777af699c41b65b888bda15d7772fb427ee56d82b41ffa7b357920289ae491a0",
       "status": "active"
     },
     "launch": {
@@ -667,8 +667,8 @@
     "marketing-plan": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/marketing-plan",
-      "sha": "1efedbc",
-      "contentHash": "sha256:781eb65952375db89de6844980b6fc77c6d1fff6ff4be86fcd49da1dfaee4e49",
+      "sha": "28e4a81",
+      "contentHash": "sha256:f033c8c3aa00ed1e8da72e23836315a557c5907ac69dad66d242bb9d236f69ef",
       "status": "active"
     },
     "marketing-psychology": {
@@ -800,8 +800,8 @@
     "social": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/social",
-      "sha": "b9ba399",
-      "contentHash": "sha256:df43d65897fb4e44b7183809b2f2794d44b274f20b92398e14223b8128b353b5",
+      "sha": "28e4a81",
+      "contentHash": "sha256:6027c5609d7ba64133880ac9fdf5058423c6b7d8b28162b1d3ce8fb779f57e04",
       "status": "active"
     },
     "video": {
