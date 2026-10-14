@@ -464,8 +464,8 @@
     "ab-testing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ab-testing",
-      "sha": "1efedbc",
-      "contentHash": "sha256:08a86131e3dfdd0a2357fb65d275e208a509c46819d397980b520eee1e7d59ba",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:10cb8518aa7044f5e2b0e0cdbdbffb9c93791ddfedcaa4d599d636be6babb12e",
       "status": "active"
     },
     "ad-creative": {
@@ -478,8 +478,8 @@
     "ads": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ads",
-      "sha": "1efedbc",
-      "contentHash": "sha256:7f00d041b914d44537d3478a3f52573a903a075fc5ca7565b97d840a9ccbe2cd",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:87c00d3343cccac090d8b6a9397815210b1433927b4d100e96d4bca211580fef",
       "status": "active"
     },
     "ai-seo": {
@@ -506,22 +506,22 @@
     "attribution": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/attribution",
-      "sha": "1efedbc",
-      "contentHash": "sha256:4fcc7bb92a0a3dcdd46d3274a9e7baf13405b9caeb38822ce25a73bc5cf92484",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:820d24409146f69ebea507dfb118e259f50bb5f98bb6db1800455bc5e48cee87",
       "status": "active"
     },
     "churn-prevention": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/churn-prevention",
-      "sha": "1efedbc",
-      "contentHash": "sha256:e7206a324ec38f2b7ca95310aa644fc75920ad13fc2f4afab632bb7041bb1ff7",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:2d2a88488ab3a90e4bcb8b9528c17d8c4463c1f0517003e43d8637f2d9eff14e",
       "status": "active"
     },
     "co-marketing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/co-marketing",
-      "sha": "dda3841",
-      "contentHash": "sha256:d7a0f9eb1a3aaa0362e4bbe17c4d4aa8f483f473e3c21fb93f421e59708dbeda",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:87f3313061a9bf05ce68e1d1c5297b4bba7d7b15baabcceb20204ad23e9bb9bd",
       "status": "active"
     },
     "cold-email": {
@@ -681,15 +681,15 @@
     "offers": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/offers",
-      "sha": "dda3841",
-      "contentHash": "sha256:889b651c5ab89be884253bf19d9aa95fe13b934ba8064910afd05f35408229a8",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:62def0ff06220b5e7e53f34e850c22c8d9c5fa9815ea0706d275e07c66b22f22",
       "status": "active"
     },
     "onboarding": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/onboarding",
-      "sha": "dda3841",
-      "contentHash": "sha256:655b6599ecc157f07940a35c340fe09d007e2f6905048f4a776fc94c21de633c",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:46630f2989605f5b1baecb834b4d97925073575b2cd2bdbe37393fb16f8da31f",
       "status": "active"
     },
     "paywalls": {
@@ -709,8 +709,8 @@
     "pricing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/pricing",
-      "sha": "1efedbc",
-      "contentHash": "sha256:e1979a363d10a7a2bcc12f33b96f6c584d288d00b0a5bfc3399251edc770d8eb",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:2d7b18cfe9190920a5e36fd046f23e78affac1542fd634ba10d3539746beec71",
       "status": "active"
     },
     "product-marketing": {
@@ -744,15 +744,15 @@
     "referrals": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/referrals",
-      "sha": "1efedbc",
-      "contentHash": "sha256:6f371dcf62d1dce6cfbc9943ecbbeb862e68fbaa3312cc771f5764933381ecd3",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:1b845d21775d7d04c60a83340fd9a3db56063dd4d3ac842945a1e29737a35c26",
       "status": "active"
     },
     "revops": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/revops",
-      "sha": "1efedbc",
-      "contentHash": "sha256:e2ba150eb7013e13cf7a740f2097d90bb555278c183a5de066efaef1166f81c1",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:f52739293aa0bae82a39266a26c71c821a6452cdd3485c92f061297554fa9e81",
       "status": "active"
     },
     "sales-enablement": {
@@ -772,8 +772,8 @@
     "seo-audit": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/seo-audit",
-      "sha": "1efedbc",
-      "contentHash": "sha256:d956ce8f3b802ac6da77fa25e5d4b7137509cefeecf332db631b4fb0ea6686a3",
+      "sha": "c7d7dfb",
+      "contentHash": "sha256:500fe6314ae4c8383c722016f1da94378aee165267899de3129caa78bd67c5b4",
       "status": "active"
     },
     "signup": {
