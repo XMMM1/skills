@@ -471,22 +471,22 @@
     "ad-creative": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ad-creative",
-      "sha": "28e4a81",
-      "contentHash": "sha256:df9e412f3cb78b675cb397e72c4336ce6dfe935e98dfcf7180e15938e1c5ab0f",
+      "sha": "55ff469",
+      "contentHash": "sha256:7c624a8a6a76c22118dad9674b4b1310da53b5488c7a1ababbd7d3ec8c8b39d4",
       "status": "active"
     },
     "ads": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ads",
-      "sha": "c7d7dfb",
-      "contentHash": "sha256:87c00d3343cccac090d8b6a9397815210b1433927b4d100e96d4bca211580fef",
+      "sha": "55ff469",
+      "contentHash": "sha256:a7a173f33761ca604455397e2a4aebfb5db2894d1abb5f78d9d7ab34895b2dc8",
       "status": "active"
     },
     "ai-seo": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ai-seo",
-      "sha": "1efedbc",
-      "contentHash": "sha256:3e0a18e11e90973ab9f0d176c4db8e00dfd125963eb6b785493ff8dc91aef080",
+      "sha": "55ff469",
+      "contentHash": "sha256:c66a4341a3f7287eb8cd809f34ab234ce7e8a47f72f1417c81aeb81dbf543a73",
       "status": "active"
     },
     "analytics": {
@@ -625,8 +625,8 @@
     "influencer-marketing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/influencer-marketing",
-      "sha": "28e4a81",
-      "contentHash": "sha256:777af699c41b65b888bda15d7772fb427ee56d82b41ffa7b357920289ae491a0",
+      "sha": "55ff469",
+      "contentHash": "sha256:93c0ac8bf5afa79a025b47a0e7879cc63f59ad18abd92c6fd4ea95bd3a67d76b",
       "status": "active"
     },
     "launch": {
@@ -660,8 +660,8 @@
     "marketing-loops": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/marketing-loops",
-      "sha": "b9ba399",
-      "contentHash": "sha256:b37146782a576dc9d44943f43444b311cbb9e488b11a4972e24595de4a3eeb82",
+      "sha": "55ff469",
+      "contentHash": "sha256:8bb558d30e10bd30292ea5c97a678e6077b88205e1930b4b0e15d914ad18ada2",
       "status": "active"
     },
     "marketing-plan": {
@@ -800,8 +800,8 @@
     "social": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/social",
-      "sha": "28e4a81",
-      "contentHash": "sha256:6027c5609d7ba64133880ac9fdf5058423c6b7d8b28162b1d3ce8fb779f57e04",
+      "sha": "55ff469",
+      "contentHash": "sha256:40abf4b54964fab601679434ef2bfae25d68a80c09525ba421f6baa37b769e22",
       "status": "active"
     },
     "video": {
