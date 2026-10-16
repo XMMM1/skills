@@ -471,29 +471,29 @@
     "ad-creative": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ad-creative",
-      "sha": "55ff469",
-      "contentHash": "sha256:7c624a8a6a76c22118dad9674b4b1310da53b5488c7a1ababbd7d3ec8c8b39d4",
+      "sha": "365b412",
+      "contentHash": "sha256:8527da44115b83efa3f55e45bb18b16e376cdb08a2b1046445ce5b136f315ead",
       "status": "active"
     },
     "ads": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ads",
-      "sha": "55ff469",
-      "contentHash": "sha256:a7a173f33761ca604455397e2a4aebfb5db2894d1abb5f78d9d7ab34895b2dc8",
+      "sha": "365b412",
+      "contentHash": "sha256:6516af30d0b03bc169ac129e57abe18ed4208425323462aea8f14b8f37d66f0e",
       "status": "active"
     },
     "ai-seo": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ai-seo",
-      "sha": "55ff469",
-      "contentHash": "sha256:c66a4341a3f7287eb8cd809f34ab234ce7e8a47f72f1417c81aeb81dbf543a73",
+      "sha": "365b412",
+      "contentHash": "sha256:037c9b82b0e5a5fc4fbf0d910324a7f3cf6221a59f468a17db91b139933dd432",
       "status": "active"
     },
     "analytics": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/analytics",
-      "sha": "28e4a81",
-      "contentHash": "sha256:5fa029d25c149126ee8bcd99ca5b70ed63ca54c367c5415637c01ae1c9030c50",
+      "sha": "365b412",
+      "contentHash": "sha256:eec1c954da7068b1134d5aa43cd5fb1922de494e75fde72f2eba912795572af3",
       "status": "active"
     },
     "aso": {
@@ -562,15 +562,15 @@
     "copy-editing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/copy-editing",
-      "sha": "b9ba399",
-      "contentHash": "sha256:f14985eed105e58d9acf5031ef84453d74376dd885f69cda813626ac87d36f5b",
+      "sha": "365b412",
+      "contentHash": "sha256:1dc61cb1bcefb804a7795e4f624d69232d8756c87db87258678e88ae25ba74b2",
       "status": "active"
     },
     "copywriting": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/copywriting",
-      "sha": "28e4a81",
-      "contentHash": "sha256:0d7e3fd21d7bb722c24035901541b92505358bce8401b2a75df3a60b9a7e3b19",
+      "sha": "365b412",
+      "contentHash": "sha256:7a467bb8414224a545b3154ccdaaaf86dbc3da90bfc2bb2aebfadc2e3e4b867f",
       "status": "active"
     },
     "cro": {
@@ -597,8 +597,8 @@
     "emails": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/emails",
-      "sha": "1efedbc",
-      "contentHash": "sha256:a21cac6a74a28cacd1e9d8f96d20354fe63b52bb0b245a0cd928c720dae25b4e",
+      "sha": "365b412",
+      "contentHash": "sha256:f6a6143a190e0136b6711ad03026a5dbbc2e4995b8544150982e279780c414e3",
       "status": "active"
     },
     "events": {
@@ -611,8 +611,8 @@
     "free-tools": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/free-tools",
-      "sha": "dda3841",
-      "contentHash": "sha256:7743e14e702110cc9e25f10de24fc5ee4bec731e58170b3ad21ae832d7eb2b8e",
+      "sha": "365b412",
+      "contentHash": "sha256:340e23af2c3c86aecf9b5ce4d8543b742428fc52630fbd0afe0d22654f460e6f",
       "status": "active"
     },
     "image": {
@@ -625,8 +625,8 @@
     "influencer-marketing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/influencer-marketing",
-      "sha": "55ff469",
-      "contentHash": "sha256:93c0ac8bf5afa79a025b47a0e7879cc63f59ad18abd92c6fd4ea95bd3a67d76b",
+      "sha": "365b412",
+      "contentHash": "sha256:11b6ff484a6db94cfc8b3effadbc7dd1a160435e7d0582cf6983541feb9eea91",
       "status": "active"
     },
     "launch": {
@@ -660,8 +660,8 @@
     "marketing-loops": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/marketing-loops",
-      "sha": "55ff469",
-      "contentHash": "sha256:8bb558d30e10bd30292ea5c97a678e6077b88205e1930b4b0e15d914ad18ada2",
+      "sha": "365b412",
+      "contentHash": "sha256:bbae26b3194ecdb977235523562d000326d2dbacc797e90cdfe7c21c4c339fb8",
       "status": "active"
     },
     "marketing-plan": {
@@ -716,8 +716,8 @@
     "product-marketing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/product-marketing",
-      "sha": "dda3841",
-      "contentHash": "sha256:757ea257e985105fc29d2a4b5d1885555370b70c2a5b20b9c19fdb7a52589012",
+      "sha": "365b412",
+      "contentHash": "sha256:382f60ee6c56f4dbe4e753eae35c9ad8038fbe3c73abc0009af462446abd7854",
       "status": "active"
     },
     "programmatic-seo": {
