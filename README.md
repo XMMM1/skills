@@ -22,7 +22,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | --- | --- | --- |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 41 |
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | 14 |
-| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | MIT | 50 |
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | MIT | 52 |
 | _authored_ | MIT; copied files per NOTICE | 4 |
 
 ## Skills
@@ -50,6 +50,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `competitor-profiling` | coreyhaines31 | — | |
 | `competitors` | coreyhaines31 | — | |
 | `content-strategy` | coreyhaines31 | — | |
+| `conversion-tracking` | coreyhaines31 | — | |
 | `copy-editing` | coreyhaines31 | — | |
 | `copywriting` | coreyhaines31 | — | |
 | `cro` | coreyhaines31 | — | |
@@ -76,6 +77,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `influencer-marketing` | coreyhaines31 | — | |
 | `launch` | coreyhaines31 | — | |
 | `lead-magnets` | coreyhaines31 | — | |
+| `link-building` | coreyhaines31 | — | |
 | `loop-me` | mattpocock | — | |
 | `marketing-council` | coreyhaines31 | — | |
 | `marketing-ideas` | coreyhaines31 | — | |
