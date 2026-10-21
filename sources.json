@@ -450,8 +450,8 @@
     "diagnosing-superpowers": {
       "upstream": "obra",
       "upstreamPath": "skills/diagnosing-superpowers",
-      "sha": "5bf4e78",
-      "contentHash": "sha256:4fc90005548401e24578e442c0761064628d5dce8b638fb5ae2a2cd0a93d851e",
+      "sha": "b739a8a",
+      "contentHash": "sha256:41d5660b88d14facf891305fc9d0edf6ceca4ce642679d449b7b03d64ad3471c",
       "status": "active"
     },
     "chief-of-staff": {
