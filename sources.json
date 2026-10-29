@@ -83,15 +83,15 @@
     "code-review": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/code-review",
-      "sha": "f3fc563",
-      "contentHash": "sha256:780be2eef8e387f5d0c07473485cdce4dd2e55c0587f1e96635eb7e929ed1123",
+      "sha": "a496f55",
+      "contentHash": "sha256:cd5bdf2afe1680d10150ae58abacbc32e7a11d034be76c7ef6fad58546ce85e3",
       "status": "active"
     },
     "codebase-design": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/codebase-design",
-      "sha": "d81f3a1",
-      "contentHash": "sha256:e91e18258598832efe27af7e3c423ab262c6f8b8ecb6262d8fbb80d626ef0e19",
+      "sha": "a496f55",
+      "contentHash": "sha256:61f4936a45f334e894fe4c7e9b1bbaf509c1b451c2f8bddf91e563ac6ae82422",
       "status": "active"
     },
     "diagnosing-bugs": {
@@ -125,8 +125,8 @@
     "improve-codebase-architecture": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/improve-codebase-architecture",
-      "sha": "d81f3a1",
-      "contentHash": "sha256:21e81aed6d25a2b16ad0e6b9ec65b398145a110d11fd76951263d13372822e9d",
+      "sha": "a496f55",
+      "contentHash": "sha256:8d02654da91dea62336b390b4c77031629840aec40d604aa6aa08e78df98d7ea",
       "status": "active"
     },
     "prototype": {
@@ -139,8 +139,8 @@
     "research": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/research",
-      "sha": "885e2ca",
-      "contentHash": "sha256:b1976e3b4a7cdcee2f7ade52c0cf072bafdbac9cf3284568cab1aa258e584e69",
+      "sha": "a496f55",
+      "contentHash": "sha256:f2d6425b15cf3100d5c3eb4305a8e817174b8e5fa1fde6e06ad4b61321c32a60",
       "status": "active"
     },
     "resolving-merge-conflicts": {
@@ -189,8 +189,8 @@
     "wayfinder": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/wayfinder",
-      "sha": "f3fc563",
-      "contentHash": "sha256:4f71c4310d6ffaaa7db7df1ec416be6cdb5c06fc3a58751f4310901f9aacf945",
+      "sha": "a496f55",
+      "contentHash": "sha256:62a0ab7262d40119da048328a71aeadaeaa21a4049ee9268d14500921bb6e257",
       "status": "active"
     },
     "batch-grill-me": {
@@ -295,8 +295,8 @@
     "grilling": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/productivity/grilling",
-      "sha": "f3fc563",
-      "contentHash": "sha256:84ca0320c5fa81a1261d6d1d4c120ada9dea80f856a2c2565404f7125a809b86",
+      "sha": "a496f55",
+      "contentHash": "sha256:27f71f106a7062691b2982d4f847304a62930ebed8b50734f4d4fd498d60afa8",
       "status": "active"
     },
     "handoff": {
@@ -429,8 +429,8 @@
     "implement-spec": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/implement-spec",
-      "sha": "d81f3a1",
-      "contentHash": "sha256:3e613d4c4ad1c95dc3489fa447a420875dd2b6b6750eace3dcbc4d218a7d6623",
+      "sha": "a496f55",
+      "contentHash": "sha256:c50119e1da19b7e62161d96e00bc1e39e661ac48e522ce4904c362bccc90e72e",
       "status": "active"
     },
     "retro": {
@@ -457,8 +457,8 @@
     "chief-of-staff": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/chief-of-staff",
-      "sha": "5beb35b",
-      "contentHash": "sha256:528a4430273480eca7918e3815befe3aa522199f9ebe1f668c9dbdbe8279b7c9",
+      "sha": "a496f55",
+      "contentHash": "sha256:32f8e82623163a79fd06af711d6c700361251c0a94b66be458abb4021a0fe561",
       "status": "active"
     },
     "ab-testing": {
