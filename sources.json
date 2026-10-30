@@ -464,8 +464,8 @@
     "ab-testing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ab-testing",
-      "sha": "0cd9b3a",
-      "contentHash": "sha256:b8d3b013959b989e87057069752719c78f504e144cd5d70de5b8fda85cffec91",
+      "sha": "820ad2c",
+      "contentHash": "sha256:3fca7e2f543e31d102302ffbd4ea50bb210c7a227b242075a88d439aefc5707c",
       "status": "active"
     },
     "ad-creative": {
@@ -485,8 +485,8 @@
     "ai-seo": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ai-seo",
-      "sha": "17772c7",
-      "contentHash": "sha256:58bd6c7a85703c8f897ad52271791713ba9928f7cc06a2a737963f45cb8e91a6",
+      "sha": "820ad2c",
+      "contentHash": "sha256:5199292e5e901053887017ab4ef6b5e6da8c6d8815d065abdf573367d3a82d12",
       "status": "active"
     },
     "analytics": {
@@ -807,8 +807,8 @@
     "video": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/video",
-      "sha": "17772c7",
-      "contentHash": "sha256:d79a082a33a5fdf6cdc21b2bab13dc6df776cdf982dd80cf1b1ad051fdac1a5c",
+      "sha": "820ad2c",
+      "contentHash": "sha256:0242c7e3f57905fafda5b4f2955c079d05cab927335aed3ec106010ad0b5d8e2",
       "status": "active"
     },
     "conversion-tracking": {
