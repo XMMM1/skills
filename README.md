@@ -22,7 +22,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | --- | --- | --- |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 41 |
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | 14 |
-| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | MIT | 52 |
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | MIT | 53 |
 | _authored_ | MIT; copied files per NOTICE | 4 |
 
 ## Skills
@@ -102,6 +102,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `research` | mattpocock | — | |
 | `resolving-merge-conflicts` | mattpocock | — | ⚠ deleted upstream |
 | `retro` | mattpocock | — | |
+| `reverse-engineer-marketing` | coreyhaines31 | — | |
 | `revops` | coreyhaines31 | — | |
 | `sales-enablement` | coreyhaines31 | — | |
 | `scaffold-exercises` | mattpocock | — | |
