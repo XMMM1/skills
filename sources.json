@@ -541,8 +541,8 @@
     "competitor-profiling": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/competitor-profiling",
-      "sha": "e85f3cb",
-      "contentHash": "sha256:b46c19063e7fd58bd7caa98a4ba2fcfe9d429e3c4b2f1761e812e92347bd85fd",
+      "sha": "88c79f6",
+      "contentHash": "sha256:7b251650724ba9fa93ed03ba1909057d3c067160e6aba7007f844a946d3360ea",
       "status": "active"
     },
     "competitors": {
@@ -653,15 +653,15 @@
     "marketing-ideas": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/marketing-ideas",
-      "sha": "dda3841",
-      "contentHash": "sha256:18afffa4dffb3e92b0e8b56ba449459759127a774e0fc3a42425d9b7de925068",
+      "sha": "88c79f6",
+      "contentHash": "sha256:54feb7bd682aef3f8a547e67b4dfcd46a2c25a14695158b3053b3387cb01ea9c",
       "status": "active"
     },
     "marketing-loops": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/marketing-loops",
-      "sha": "0cd9b3a",
-      "contentHash": "sha256:597c6140fc74d4a88f3cfcd47b1a984fd829082f517a30c8e57c1d6f47398866",
+      "sha": "88c79f6",
+      "contentHash": "sha256:1b0ddc7c61742b11d0cdcf0170d64302f7cd34899884193d76f916de9e94154b",
       "status": "active"
     },
     "marketing-plan": {
@@ -800,8 +800,8 @@
     "social": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/social",
-      "sha": "55ff469",
-      "contentHash": "sha256:40abf4b54964fab601679434ef2bfae25d68a80c09525ba421f6baa37b769e22",
+      "sha": "88c79f6",
+      "contentHash": "sha256:6712e652fa821f49d3017ccf29afcba90e7e85a45e371fa8b151ded4e1426fdb",
       "status": "active"
     },
     "video": {
@@ -823,6 +823,13 @@
       "upstreamPath": "skills/link-building",
       "sha": "e85f3cb",
       "contentHash": "sha256:daf560f8b32c955a992e6ef1e7e668e73ed1edff22be5dbf22aa5bcb69518b2a",
+      "status": "active"
+    },
+    "reverse-engineer-marketing": {
+      "upstream": "coreyhaines31",
+      "upstreamPath": "skills/reverse-engineer-marketing",
+      "sha": "88c79f6",
+      "contentHash": "sha256:2a3de6a35c4015059499c742544d01a21d095c292c851f36c8d075aec44e5ccb",
       "status": "active"
     }
   },
