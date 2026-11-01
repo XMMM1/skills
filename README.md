@@ -20,7 +20,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 
 | upstream | license | skills |
 | --- | --- | --- |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 41 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | 42 |
 | [obra/superpowers](https://github.com/obra/superpowers) | MIT | 14 |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | MIT | 53 |
 | _authored_ | MIT; copied files per NOTICE | 4 |
@@ -115,6 +115,7 @@ New here? **[Quickstart](skills/matej/xmmm1-skills-quickstart/SKILL.md)** — wh
 | `site-architecture` | coreyhaines31 | — | |
 | `sms` | coreyhaines31 | — | |
 | `social` | coreyhaines31 | — | |
+| `software-factory` | mattpocock | — | |
 | `subagent-driven-development` | obra | — | |
 | `systematic-debugging` | obra | — | |
 | `tdd` | mattpocock | — | |
