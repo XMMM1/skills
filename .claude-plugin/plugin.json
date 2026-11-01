@@ -103,6 +103,7 @@
     "./skills/mattpocock/setup-matt-pocock-skills",
     "./skills/mattpocock/setup-pre-commit",
     "./skills/mattpocock/setup-ts-deep-modules",
+    "./skills/mattpocock/software-factory",
     "./skills/mattpocock/tdd",
     "./skills/mattpocock/teach",
     "./skills/mattpocock/to-questionnaire",

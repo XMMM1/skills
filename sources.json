@@ -457,8 +457,8 @@
     "chief-of-staff": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/chief-of-staff",
-      "sha": "a496f55",
-      "contentHash": "sha256:32f8e82623163a79fd06af711d6c700361251c0a94b66be458abb4021a0fe561",
+      "sha": "4ae2317",
+      "contentHash": "sha256:b17bfd42c83f12c70d16d6b0eef156546b8399a08991880dc7cce208ee1e8a85",
       "status": "active"
     },
     "ab-testing": {
@@ -830,6 +830,13 @@
       "upstreamPath": "skills/reverse-engineer-marketing",
       "sha": "88c79f6",
       "contentHash": "sha256:2a3de6a35c4015059499c742544d01a21d095c292c851f36c8d075aec44e5ccb",
+      "status": "active"
+    },
+    "software-factory": {
+      "upstream": "mattpocock",
+      "upstreamPath": "skills/in-progress/software-factory",
+      "sha": "4ae2317",
+      "contentHash": "sha256:42be5afd9984a5e601c5da021e6c184abeb5fac755d97076e59d8f8926026753",
       "status": "active"
     }
   },
