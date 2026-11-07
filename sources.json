@@ -660,8 +660,8 @@
     "marketing-loops": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/marketing-loops",
-      "sha": "88c79f6",
-      "contentHash": "sha256:1b0ddc7c61742b11d0cdcf0170d64302f7cd34899884193d76f916de9e94154b",
+      "sha": "96798cf",
+      "contentHash": "sha256:d33e8885e9d6568ac2fcf3045f334b41845be912145e0b67ee4d20a3a302e264",
       "status": "active"
     },
     "marketing-plan": {
@@ -800,8 +800,8 @@
     "social": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/social",
-      "sha": "88c79f6",
-      "contentHash": "sha256:6712e652fa821f49d3017ccf29afcba90e7e85a45e371fa8b151ded4e1426fdb",
+      "sha": "96798cf",
+      "contentHash": "sha256:74e258e656da753938f9c6c2670e50832a1071b385f2eb3a2d7f639553559712",
       "status": "active"
     },
     "video": {
@@ -828,8 +828,8 @@
     "reverse-engineer-marketing": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/reverse-engineer-marketing",
-      "sha": "88c79f6",
-      "contentHash": "sha256:2a3de6a35c4015059499c742544d01a21d095c292c851f36c8d075aec44e5ccb",
+      "sha": "96798cf",
+      "contentHash": "sha256:e3f2b2b96ed2fbbc5deb214736f4e75216aa6b9019930202429bbd95239083f0",
       "status": "active"
     },
     "software-factory": {
