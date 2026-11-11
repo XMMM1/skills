@@ -471,8 +471,8 @@
     "ad-creative": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ad-creative",
-      "sha": "9d6d7ce",
-      "contentHash": "sha256:d0b731ab8ee4ac6d20a9b0311567b701f0af34b002eb86e1852b0d3c56ad83cb",
+      "sha": "3e72962",
+      "contentHash": "sha256:5bb14817b0ec0eccdd210a8dbc40f609b3f59181327c21b9566ea26318816474",
       "status": "active"
     },
     "ads": {
