@@ -478,8 +478,8 @@
     "ads": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/ads",
-      "sha": "9d6d7ce",
-      "contentHash": "sha256:23d00b05baab6b4cb76296972072ef91e5363511655c7e8660140ef99d6034a3",
+      "sha": "1f83744",
+      "contentHash": "sha256:7231a981cd763b9526e8b555974d7a1dc7981d599d5f7e7a41a4ffd6dbf1f1dc",
       "status": "active"
     },
     "ai-seo": {
@@ -590,8 +590,8 @@
     "directory-submissions": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/directory-submissions",
-      "sha": "9d6d7ce",
-      "contentHash": "sha256:ec54fbb03c05737215e1f3486b37d8d486b0ac519d2afa513b0c75fca27b09f9",
+      "sha": "1f83744",
+      "contentHash": "sha256:4b00d6598e8c9e226c0b7c9b67c06dfa27b62a21d6453459297972a24815de31",
       "status": "active"
     },
     "emails": {
@@ -639,8 +639,8 @@
     "lead-magnets": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/lead-magnets",
-      "sha": "9d6d7ce",
-      "contentHash": "sha256:ad48c1be0914b4935976f54dcda5bf404a5da492c8700678ced667164146bd44",
+      "sha": "1f83744",
+      "contentHash": "sha256:fc94dedfdbfd2ee6b4e078923c9feea90359839225366a2135c593172d8e37d6",
       "status": "active"
     },
     "marketing-council": {
@@ -765,8 +765,8 @@
     "schema": {
       "upstream": "coreyhaines31",
       "upstreamPath": "skills/schema",
-      "sha": "9d6d7ce",
-      "contentHash": "sha256:1ab87115f6fb3d9c684be9c360b6f69b10f43d937174b515f3b066eb6a7374b9",
+      "sha": "1f83744",
+      "contentHash": "sha256:bc7da667bb5c4d27f9747febf9616c8ac145fe7296f499565e561263325b3697",
       "status": "active"
     },
     "seo-audit": {
@@ -835,8 +835,8 @@
     "software-factory": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/software-factory",
-      "sha": "4ae2317",
-      "contentHash": "sha256:42be5afd9984a5e601c5da021e6c184abeb5fac755d97076e59d8f8926026753",
+      "sha": "5863806",
+      "contentHash": "sha256:7530ffbc95269729f15ace057de0e32292b1804f16dce335d0ee004a78a121ea",
       "status": "active"
     }
   },
