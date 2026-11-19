@@ -835,8 +835,8 @@
     "software-factory": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/in-progress/software-factory",
-      "sha": "5863806",
-      "contentHash": "sha256:7530ffbc95269729f15ace057de0e32292b1804f16dce335d0ee004a78a121ea",
+      "sha": "abeeaf9",
+      "contentHash": "sha256:bcb117a08fb72922b7e04a311e611d7cdee911d7566c45b08e753218c7b78e2c",
       "status": "active"
     }
   },
