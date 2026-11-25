@@ -104,8 +104,8 @@
     "domain-modeling": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/domain-modeling",
-      "sha": "d81f3a1",
-      "contentHash": "sha256:18a9314d338b8135e4108d1d31d2fd57ad289cf8bf31d2acd6a6f3053ac22a38",
+      "sha": "6f7f783",
+      "contentHash": "sha256:bcec95a993c38da4263c0b528a6f28b26d7f42fbbe81698e3025d4afbd0eaeb8",
       "status": "active"
     },
     "grill-with-docs": {
