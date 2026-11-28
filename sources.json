@@ -175,8 +175,8 @@
     "to-tickets": {
       "upstream": "mattpocock",
       "upstreamPath": "skills/engineering/to-tickets",
-      "sha": "4c8c36b",
-      "contentHash": "sha256:6eccfac132d92b949821d154679adc7f597bfc3e8c929f3c03786b92f91b961f",
+      "sha": "bbadaa6",
+      "contentHash": "sha256:df9b1a41787a37acb17336cb93dbe96ed939470969d3f9dcee908dcb946710c8",
       "status": "active"
     },
     "triage": {
